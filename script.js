@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
        ELEMENTS
-       ===================================================== */
+       ==================================================== */
 
     const menuButton = document.getElementById("menuButton");
     const sideMenu = document.getElementById("sideMenu");
