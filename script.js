@@ -1,653 +1,557 @@
-/* =========================
-   PROJECT DATA
-========================= */
-
-const projects = [
-
-    {
-        title: "Solar Powered Wireless Charging Road for EV",
-        domain: "ECE + CSE • INTERDISCIPLINARY PROJECT",
-
-        summary:
-            "An interdisciplinary project exploring the integration of solar energy and wireless power transfer for electric vehicle charging.",
-
-        sections: [
-            {
-                title: "Project Overview",
-                text:
-                    "The project explores a solar-powered approach to wireless charging for electric vehicles, combining renewable energy concepts with wireless power transfer."
-            },
-
-            {
-                title: "Problem Statement",
-                text:
-                    "Electric vehicles require convenient and sustainable charging solutions. The project investigates how solar energy and wireless charging concepts can be brought together."
-            },
-
-            {
-                title: "Proposed Solution",
-                text:
-                    "The proposed concept combines solar energy generation with wireless power transfer to provide a contactless charging approach for EVs."
-            },
-
-            {
-                title: "Working Flow",
-                text:
-                    "Solar Energy → Power Generation → Power Conditioning → Wireless Power Transfer → EV Charging"
-            },
-
-            {
-                title: "Key Features",
-                text:
-                    "Renewable energy concept, wireless charging approach, interdisciplinary design, and EV-focused application."
-            },
-
-            {
-                title: "Technologies / Components",
-                text:
-                    "Solar energy concepts, wireless power transfer concepts, power electronics concepts, and EV charging concepts."
-            },
-
-            {
-                title: "My Contribution",
-                text:
-                    "Worked as part of the project team and contributed to the development and presentation of the interdisciplinary project."
-            },
-
-            {
-                title: "Outcome",
-                text:
-                    "The project provided practical exposure to combining renewable energy, wireless power transfer, and electric vehicle technology."
-            },
-
-            {
-                title: "Achievement",
-                text:
-                    "Won Third Prize in the Science Exhibition at the National Science Day Event at Government College of Technology, Coimbatore, on 13.03.2026."
-            }
-        ],
-
-        ppt: "assets/documents/solar-project.pptx"
-    },
+/* =========================================================
+   NITHIYA SREE R - PORTFOLIO
+   JAVASCRIPT
+   ========================================================= */
 
 
-    {
-        title: "Camera-Free Intelligent Human Activity Detection Using Ultrasonic Sensing",
-        domain: "ECE + CSE • INTERDISCIPLINARY PROJECT",
+/* =========================================================
+   WAIT FOR PAGE TO LOAD
+   ========================================================= */
 
-        summary:
-            "An interdisciplinary concept that explores human activity detection using ultrasonic sensing instead of camera-based monitoring.",
+document.addEventListener("DOMContentLoaded", function () {
 
-        sections: [
-            {
-                title: "Project Overview",
-                text:
-                    "The project explores camera-free human activity detection using ultrasonic sensing technology."
-            },
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
 
-            {
-                title: "Problem Statement",
-                text:
-                    "Camera-based monitoring can raise privacy concerns in certain environments. A camera-free sensing approach can be explored for detecting human movement and activity."
-            },
+    const menuButton = document.getElementById("menuButton");
+    const sideMenu = document.getElementById("sideMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
 
-            {
-                title: "Proposed Solution",
-                text:
-                    "Ultrasonic sensing is used as the sensing approach for detecting changes associated with human movement and activity."
-            },
+    const projectModal = document.getElementById("projectModal");
+    const certificateModal = document.getElementById("certificateModal");
 
-            {
-                title: "Working Flow",
-                text:
-                    "Ultrasonic Sensing → Signal Observation → Movement Detection → Activity Identification"
-            },
+    const projectModalContent =
+        document.getElementById("projectModalContent");
 
-            {
-                title: "Key Features",
-                text:
-                    "Camera-free sensing, privacy-oriented approach, ultrasonic sensing, and human activity detection."
-            },
-
-            {
-                title: "Sensing Method",
-                text:
-                    "The project uses ultrasonic sensing rather than visual camera input."
-            },
-
-            {
-                title: "Applications",
-                text:
-                    "The concept can be explored for privacy-conscious monitoring and human activity detection environments."
-            },
-
-            {
-                title: "Outcome",
-                text:
-                    "The project provided interdisciplinary exposure to sensing technology and computer science concepts."
-            }
-        ],
-
-        ppt: "assets/documents/human-activity-detection.pptx"
-    },
+    const year = document.getElementById("year");
 
 
-    {
-        title: "Hangman",
-        domain: "CSE • C PROGRAMMING",
+    /* =====================================================
+       PROJECT DATA
+       ===================================================== */
 
-        summary:
-            "A word-guessing game developed using C programming concepts and game logic.",
+    const projects = [
 
-        sections: [
-            {
-                title: "Project Overview",
-                text:
-                    "Hangman is an interactive word-guessing game implemented using C programming."
-            },
+        {
+            title: "Solar Powered Wireless Charging Road for EV",
 
-            {
-                title: "Objective",
-                text:
-                    "The objective is to guess the hidden word by entering letters while managing the available attempts."
-            },
+            description:
+                "A smart road concept that uses solar energy and wireless charging technology to charge electric vehicles while they are travelling.",
 
-            {
-                title: "Game Logic",
-                text:
-                    "The program processes the player's guesses and updates the displayed word based on whether the guessed character is present."
-            },
+            technologies:
+                "Solar Energy, Wireless Charging, EV Technology",
 
-            {
-                title: "Working Flow",
-                text:
-                    "Start Game → Display Hidden Word → Enter Guess → Check Guess → Update Word → Continue Until Win/Loss"
-            },
+            type:
+                "Renewable Energy & Electric Vehicle Project",
 
-            {
-                title: "C Concepts Used",
-                text:
-                    "Input/output, conditional statements, loops, character handling, arrays, and functions."
-            },
-
-            {
-                title: "Features",
-                text:
-                    "Interactive guessing, attempt tracking, word display, and win/loss conditions."
-            },
-
-            {
-                title: "Outcome",
-                text:
-                    "The project strengthened programming logic and understanding of control structures in C."
-            }
-        ],
-
-        document: "assets/documents/hangman.pdf"
-    },
+            ppt:
+                "assets/documents/solar-project.pptx"
+        },
 
 
-    {
-        title: "Tic-Tac-Toe",
-        domain: "CSE • MOBILE APPLICATION",
+        {
+            title:
+                "Camera-Free Intelligent Human Activity Detection Using Ultrasonic Sensing",
 
-        summary:
-            "An interactive Tic-Tac-Toe game developed using MIT App Inventor with a visual interface and game logic.",
+            description:
+                "A camera-free system that uses ultrasonic sensing to detect human presence and activity while maintaining privacy.",
 
-        sections: [
-            {
-                title: "Project Overview",
-                text:
-                    "A mobile Tic-Tac-Toe game developed using MIT App Inventor."
-            },
+            technologies:
+                "Arduino, HC-SR04 Ultrasonic Sensor, LDR, Buzzer, Machine Learning",
 
-            {
-                title: "Objective",
-                text:
-                    "To create an interactive two-player game with a simple interface and clear game flow."
-            },
+            type:
+                "IoT & Intelligent Detection System",
 
-            {
-                title: "UI Design",
-                text:
-                    "The application uses a visual interface designed for players to interact with the game board."
-            },
-
-            {
-                title: "Game Logic",
-                text:
-                    "The game processes player selections and checks the board state to determine the result."
-            },
-
-            {
-                title: "Working Flow",
-                text:
-                    "Start Game → Player Move → Update Board → Check Winning Condition → Display Result"
-            },
-
-            {
-                title: "Technology",
-                text:
-                    "MIT App Inventor"
-            },
-
-            {
-                title: "Outcome",
-                text:
-                    "The project provided practical experience in mobile application development, UI design, and event-based logic."
-            }
-        ],
-
-        document: "assets/documents/tictactoe.pdf",
-
-        website:
-            "https://nithiya1409.github.io/Tic-tac-toe-/"
-    },
+            ppt:
+                "assets/documents/human-activity-detection.pptx"
+        },
 
 
-    {
-        title: "CGPA Calculator",
-        domain: "CSE • ACADEMIC APPLICATION",
+        {
+            title: "Hangman",
 
-        summary:
-            "A CGPA calculation project supported by Software Requirements Specification documentation.",
+            description:
+                "A simple word-guessing game developed to demonstrate programming logic, user interaction and game-based problem solving.",
 
-        sections: [
-            {
-                title: "Project Overview",
-                text:
-                    "The CGPA Calculator is designed to help students calculate their academic performance using semester/course information."
-            },
+            technologies:
+                "Programming, Game Logic",
 
-            {
-                title: "Problem Statement",
-                text:
-                    "Manual calculation of academic averages can be time-consuming and may lead to calculation mistakes."
-            },
+            type:
+                "Mini Game Project",
 
-            {
-                title: "Proposed Solution",
-                text:
-                    "A calculator-based application can organize the required academic inputs and calculate the CGPA systematically."
-            },
+            document:
+                "assets/documents/hangman.pdf"
+        },
 
-            {
-                title: "Working Flow",
-                text:
-                    "Enter Academic Details → Process Inputs → Calculate Grade/Performance Values → Generate CGPA"
-            },
 
-            {
-                title: "Key Features",
-                text:
-                    "Academic input handling, systematic calculation, and CGPA output."
-            },
+        {
+            title: "Tic-Tac-Toe",
 
-            {
-                title: "Documentation",
-                text:
-                    "The project is supported by an SRS document describing the software requirements."
-            },
+            description:
+                "A classic two-player Tic-Tac-Toe game developed as an interactive web project.",
 
-            {
-                title: "Outcome",
-                text:
-                    "The project provides practical exposure to requirement analysis and academic calculation logic."
-            }
-        ],
+            technologies:
+                "HTML, CSS, JavaScript",
 
-        srs: "assets/documents/cgpa-calculator-srs.pdf"
+            type:
+                "Web Development Project",
+
+            document:
+                "assets/documents/tictactoe.pdf",
+
+            website:
+                "https://nithiya1409.github.io/Tic-tac-toe-/"
+        },
+
+
+        {
+            title: "CGPA Calculator",
+
+            description:
+                "A CGPA calculator designed to calculate academic performance based on subjects, credits and grade points.",
+
+            technologies:
+                "Java, Calculation Logic",
+
+            type:
+                "Academic Utility Project",
+
+            srs:
+                "assets/documents/cgpa-calculator-srs.pdf"
+        }
+
+    ];
+
+
+    /* =====================================================
+       MENU FUNCTIONS
+       ===================================================== */
+
+    function openMenu() {
+
+        if (!sideMenu || !menuOverlay) return;
+
+        sideMenu.classList.add("active");
+        menuOverlay.classList.add("active");
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "true");
+        }
+
+        document.body.style.overflow = "hidden";
     }
 
-];
+
+    function closeNavigationMenu() {
+
+        if (!sideMenu || !menuOverlay) return;
+
+        sideMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        document.body.style.overflow = "";
+    }
 
 
-/* =========================
-   DISPLAY PROJECTS
-========================= */
+    /* Open menu */
 
-const projectsGrid = document.getElementById("projectsGrid");
+    if (menuButton) {
+        menuButton.addEventListener("click", openMenu);
+    }
 
-function displayProjects() {
 
-    projectsGrid.innerHTML = "";
+    /* Close menu */
 
-    projects.forEach((project, index) => {
+    if (closeMenu) {
+        closeMenu.addEventListener(
+            "click",
+            closeNavigationMenu
+        );
+    }
 
-        const card = document.createElement("article");
 
-        card.className = "project-card";
+    /* Close when overlay is clicked */
 
-        card.innerHTML = `
+    if (menuOverlay) {
+        menuOverlay.addEventListener(
+            "click",
+            closeNavigationMenu
+        );
+    }
 
-            <div>
 
-                <p class="project-domain">
-                    ${project.domain}
-                </p>
+    /* =====================================================
+       CLOSE MENU WHEN NAVIGATION LINK IS CLICKED
+       ===================================================== */
 
-                <h3>
-                    ${project.title}
-                </h3>
+    const navigationLinks =
+        document.querySelectorAll(".side-menu a");
 
-                <p>
-                    ${project.summary}
-                </p>
+    navigationLinks.forEach(function (link) {
 
-            </div>
+        link.addEventListener("click", function () {
 
-            <div class="project-footer">
+            closeNavigationMenu();
 
-                <span class="project-number">
-                    0${index + 1}
-                </span>
+        });
+
+    });
+
+
+    /* =====================================================
+       DISPLAY PROJECTS
+       ===================================================== */
+
+    function displayProjects() {
+
+        const projectsGrid =
+            document.getElementById("projectsGrid");
+
+        if (!projectsGrid) return;
+
+        projectsGrid.innerHTML = "";
+
+
+        projects.forEach(function (project, index) {
+
+            const card =
+                document.createElement("article");
+
+            card.className = "project-card";
+
+
+            card.innerHTML = `
+
+                <div>
+
+                    <div class="project-number">
+                        PROJECT ${String(index + 1).padStart(2, "0")}
+                    </div>
+
+                    <h3>
+                        ${project.title}
+                    </h3>
+
+                    <p>
+                        ${project.description}
+                    </p>
+
+                </div>
+
 
                 <button
-                    class="btn secondary-btn"
-                    onclick="openProject(${index})"
-                >
-                    Explore Project
+                    type="button"
+                    class="project-view-btn"
+                    onclick="openProject(${index})">
+
+                    View Project →
+
                 </button>
 
-            </div>
-
-        `;
-
-        projectsGrid.appendChild(card);
-
-    });
-
-}
+            `;
 
 
-/* =========================
-   OPEN PROJECT
-========================= */
+            projectsGrid.appendChild(card);
 
-function openProject(index) {
-
-    const project = projects[index];
-
-    const modal = document.getElementById("projectModal");
-
-    const content = document.getElementById("projectModalContent");
-
-    let sectionsHTML = "";
-
-    project.sections.forEach(section => {
-
-        sectionsHTML += `
-
-            <div class="detail-box">
-
-                <h4>
-                    ${section.title}
-                </h4>
-
-                <p>
-                    ${section.text}
-                </p>
-
-            </div>
-
-        `;
-
-    });
-
-
-    let actionButtons = "";
-
-
-    if (project.ppt) {
-
-        actionButtons += `
-
-            <a
-                href="${project.ppt}"
-                target="_blank"
-                class="btn primary-btn"
-            >
-                View Project PPT
-            </a>
-
-        `;
+        });
 
     }
 
 
-    if (project.document) {
+    /* =====================================================
+       OPEN PROJECT
+       ===================================================== */
 
-        actionButtons += `
+    window.openProject = function (index) {
 
-            <a
-                href="${project.document}"
-                target="_blank"
-                class="btn secondary-btn"
-            >
-                View Project Document
-            </a>
+        const project = projects[index];
 
-        `;
-
-    }
+        if (!project || !projectModal || !projectModalContent) {
+            return;
+        }
 
 
-    if (project.srs) {
-
-        actionButtons += `
-
-            <a
-                href="${project.srs}"
-                target="_blank"
-                class="btn primary-btn"
-            >
-                View SRS
-            </a>
-
-        `;
-
-    }
+        let actionButtons = "";
 
 
-    if (
-        project.website &&
-        !project.website.includes("PASTE_YOUR")
-    ) {
+        /* ---------- PPT ---------- */
 
-        actionButtons += `
+        if (project.ppt) {
 
-            <a
-                href="${project.website}"
-                target="_blank"
-                class="btn secondary-btn"
-            >
-                View Live Website
-            </a>
+            actionButtons += `
 
-        `;
+                <a
+                    href="${project.ppt}"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn primary-btn">
 
-    }
+                    📊 View Project PPT →
+
+                </a>
+
+            `;
+
+        }
 
 
-    content.innerHTML = `
+        /* ---------- PDF DOCUMENT ---------- */
 
-        <div class="modal-title">
+        if (project.document) {
 
-            <p class="modal-domain">
-                ${project.domain}
-            </p>
+            actionButtons += `
+
+                <a
+                    href="${project.document}"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn primary-btn">
+
+                    📄 View Document →
+
+                </a>
+
+            `;
+
+        }
+
+
+        /* ---------- SRS ---------- */
+
+        if (project.srs) {
+
+            actionButtons += `
+
+                <a
+                    href="${project.srs}"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn primary-btn">
+
+                    📑 View SRS →
+
+                </a>
+
+            `;
+
+        }
+
+
+        /* ---------- WEBSITE ---------- */
+
+        if (project.website) {
+
+            actionButtons += `
+
+                <a
+                    href="${project.website}"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn secondary-btn">
+
+                    🌐 Visit Website →
+
+                </a>
+
+            `;
+
+        }
+
+
+        /* =================================================
+           MODAL CONTENT
+           ================================================= */
+
+        projectModalContent.innerHTML = `
 
             <h2>
                 ${project.title}
             </h2>
 
-            <p class="modal-summary">
-                ${project.summary}
+
+            <p>
+                ${project.description}
             </p>
 
-        </div>
 
-        <div class="modal-sections">
-
-            ${sectionsHTML}
-
-        </div>
-
-        <div class="modal-actions">
-
-            ${actionButtons}
-
-        </div>
-
-    `;
+            <div class="project-details">
 
 
-    modal.classList.add("active");
+                <div class="detail-box">
 
-    document.body.style.overflow = "hidden";
-}
+                    <h4>
+                        TECHNOLOGIES
+                    </h4>
 
+                    <p>
+                        ${project.technologies}
+                    </p>
 
-/* =========================
-   CLOSE PROJECT
-========================= */
-
-function closeProject() {
-
-    document
-        .getElementById("projectModal")
-        .classList.remove("active");
-
-    document.body.style.overflow = "";
-}
+                </div>
 
 
-/* =========================
-   CERTIFICATE
-========================= */
+                <div class="detail-box">
 
-function openCertificate() {
+                    <h4>
+                        PROJECT TYPE
+                    </h4>
 
-    document
-        .getElementById("certificateModal")
-        .classList.add("active");
+                    <p>
+                        ${project.type}
+                    </p>
 
-    document.body.style.overflow = "hidden";
-}
-
-
-function closeCertificate() {
-
-    document
-        .getElementById("certificateModal")
-        .classList.remove("active");
-
-    document.body.style.overflow = "";
-}
+                </div>
 
 
-/* =========================
-   SIDE MENU
-========================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const sideMenu =
-    document.getElementById("sideMenu");
-
-const closeMenuButton =
-    document.getElementById("closeMenu");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
+            </div>
 
 
-function openMenu() {
+            <div class="modal-actions">
 
-    sideMenu.classList.add("active");
+                ${actionButtons}
 
-    menuOverlay.classList.add("active");
+            </div>
 
-}
-
-
-function closeMenu() {
-
-    sideMenu.classList.remove("active");
-
-    menuOverlay.classList.remove("active");
-
-}
+        `;
 
 
-menuButton.addEventListener(
-    "click",
-    openMenu
-);
+        projectModal.classList.add("active");
 
-closeMenuButton.addEventListener(
-    "click",
-    closeMenu
-);
-
-menuOverlay.addEventListener(
-    "click",
-    closeMenu
-);
-
-
-/* Close menu after clicking navigation */
-
-document
-    .querySelectorAll(".side-menu a")
-    .forEach(link => {
-
-        link.addEventListener(
-            "click",
-            closeMenu
+        projectModal.setAttribute(
+            "aria-hidden",
+            "false"
         );
 
-    });
+        document.body.style.overflow = "hidden";
+
+    };
 
 
-/* =========================
-   ESCAPE KEY
-========================= */
+    /* =====================================================
+       CLOSE PROJECT
+       ===================================================== */
 
-document.addEventListener(
-    "keydown",
-    event => {
+    window.closeProject = function () {
 
-        if (event.key === "Escape") {
+        if (!projectModal) return;
 
-            closeProject();
+        projectModal.classList.remove("active");
 
-            closeCertificate();
+        projectModal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
 
-            closeMenu();
+        document.body.style.overflow = "";
 
-        }
+    };
+
+
+    /* =====================================================
+       CERTIFICATE
+       ===================================================== */
+
+    window.openCertificate = function () {
+
+        if (!certificateModal) return;
+
+        certificateModal.classList.add("active");
+
+        certificateModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow = "hidden";
+
+    };
+
+
+    /* =====================================================
+       CLOSE CERTIFICATE
+       ===================================================== */
+
+    window.closeCertificate = function () {
+
+        if (!certificateModal) return;
+
+        certificateModal.classList.remove("active");
+
+        certificateModal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.style.overflow = "";
+
+    };
+
+
+    /* =====================================================
+       CLICK OUTSIDE PROJECT MODAL
+       ===================================================== */
+
+    if (projectModal) {
+
+        projectModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === projectModal) {
+
+                    window.closeProject();
+
+                }
+
+            }
+        );
 
     }
-);
 
 
-/* =========================
-   MODAL BACKGROUND CLICK
-========================= */
+    /* =====================================================
+       CLICK OUTSIDE CERTIFICATE MODAL
+       ===================================================== */
 
-document
-    .getElementById("projectModal")
-    .addEventListener(
-        "click",
-        event => {
+    if (certificateModal) {
 
-            if (
-                event.target.id === "projectModal"
-            ) {
+        certificateModal.addEventListener(
+            "click",
+            function (event) {
 
-                closeProject();
+                if (event.target === certificateModal) {
+
+                    window.closeCertificate();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESCAPE KEY
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeNavigationMenu();
+
+                window.closeProject();
+
+                window.closeCertificate();
 
             }
 
@@ -655,52 +559,22 @@ document
     );
 
 
-document
-    .getElementById("certificateModal")
-    .addEventListener(
-        "click",
-        event => {
+    /* =====================================================
+       CURRENT YEAR
+       ===================================================== */
 
-            if (
-                event.target.id === "certificateModal"
-            ) {
+    if (year) {
 
-                closeCertificate();
+        year.textContent =
+            new Date().getFullYear();
 
-            }
-
-        }
-    );
+    }
 
 
-/* =========================
-   CONTACT FORM
-========================= */
+    /* =====================================================
+       INITIALIZE PROJECTS
+       ===================================================== */
 
-/*
-   Formspree handles the form submission directly.
+    displayProjects();
 
-   The form connection is already defined in index.html:
-
-   action="https://formspree.io/f/xwlpqldj"
-   method="POST"
-
-   IMPORTANT:
-   Do NOT use event.preventDefault() here.
-   Otherwise the form submission to Formspree will be stopped.
-*/
-
-
-/* =========================
-   YEAR
-========================= */
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-/* =========================
-   START
-========================= */
-
-displayProjects();
+});
