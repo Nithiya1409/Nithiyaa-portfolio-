@@ -1,95 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Nithiya Sree R | Portfolio</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <meta name="description"
+          content="Portfolio of Nithiya Sree R, Computer Science and Engineering student at Government College of Technology, Coimbatore.">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<!-- =========================
+     BACKGROUND EFFECTS
+========================= -->
 
-<!-- =====================================================
-     BACKGROUND EFFECT
-===================================================== -->
+<div class="bg-glow glow-one"></div>
+<div class="bg-glow glow-two"></div>
+<div class="bg-glow glow-three"></div>
 
-<div class="aurora-bg"></div>
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="top-header">
+
+    <a href="#home" class="logo">
+        NITHIYA<span>.</span>
+    </a>
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
 
 
-<!-- =====================================================
-     NAVIGATION DOT BUTTON
-===================================================== -->
-
-<button
-    class="menu-button"
-    id="menuButton"
-    aria-label="Open navigation menu"
->
-
-    <span></span>
-    <span></span>
-    <span></span>
-
-</button>
-
-
-<!-- =====================================================
+<!-- =========================
      MENU OVERLAY
-===================================================== -->
+========================= -->
 
-<div
-    class="menu-overlay"
-    id="menuOverlay"
-></div>
+<div class="menu-overlay" id="menuOverlay"></div>
 
 
-<!-- =====================================================
-     SIDE NAVIGATION MENU
-===================================================== -->
+<!-- =========================
+     SIDE MENU
+========================= -->
 
-<aside
-    class="side-menu"
-    id="sideMenu"
->
+<aside class="side-menu" id="sideMenu">
 
+    <button
+        class="close-menu"
+        id="closeMenu"
+        type="button"
+        aria-label="Close menu">
 
-    <div class="menu-header">
+        <i class="fa-solid fa-xmark"></i>
 
-        <h2>
-            NITHIYA <span>SREE R</span>
-        </h2>
+    </button>
 
-        <button
-            id="closeMenu"
-            class="close-menu"
-            aria-label="Close menu"
-        >
-            ×
-        </button>
-
+    <div class="menu-heading">
+        <span>MENU</span>
+        <h2>Explore</h2>
     </div>
 
-
-    <nav class="main-navigation">
+    <nav>
 
         <a href="#home">
             <span>01</span>
@@ -98,17 +94,17 @@
 
         <a href="#about">
             <span>02</span>
-            About Me
+            About
         </a>
 
         <a href="#skills">
             <span>03</span>
-            Tech Stack
+            Skills
         </a>
 
         <a href="#projects">
             <span>04</span>
-            Featured Work
+            Projects
         </a>
 
         <a href="#achievements">
@@ -118,12 +114,12 @@
 
         <a href="#academic">
             <span>06</span>
-            Academic Profile
+            Academic
         </a>
 
         <a href="#objective">
             <span>07</span>
-            Career Objective
+            Objective
         </a>
 
         <a href="#creative">
@@ -143,1820 +139,1090 @@
 
     </nav>
 
+    <div class="menu-footer">
+        CSE STUDENT · GCT COIMBATORE
+    </div>
+
 </aside>
 
 
+<!-- =========================
+     HERO
+========================= -->
 
-<!-- =====================================================
-     HOME / HERO
-===================================================== -->
+<main>
 
-<section
-    class="hero"
-    id="home"
->
-
+<section class="hero section" id="home">
 
     <div class="hero-content">
 
-
-        <div class="hero-label">
+        <div class="hero-small-title">
             COMPUTER SCIENCE & ENGINEERING
         </div>
 
-
-        <p class="hero-small">
-            Hello, I am
-        </p>
-
-
         <h1>
-            Nithiya
-            <span>Sree R</span>
+            NITHIYA
+            <span>SREE R</span>
         </h1>
 
-
-        <h2>
-            CSE Student at
-            <strong>
-                Government College of Technology, Coimbatore
-            </strong>
-        </h2>
-
-
-        <div class="hero-role">
-
-            Computer Science & Engineering Student
-
-            <span>|</span>
-
-            Aspiring Software Developer
-
-        </div>
-
-
         <p class="hero-description">
-
-            Building practical solutions through programming,
-            problem-solving, and continuous learning.
-
+            CSE student at Government College of Technology,
+            Coimbatore, passionate about technology,
+            problem solving and building meaningful digital solutions.
         </p>
-
 
         <div class="hero-buttons">
 
-
-            <a
-                href="#projects"
-                class="btn primary-btn"
-            >
-                Explore My Work
+            <a href="#projects" class="btn primary-btn">
+                Explore Projects
+                <i class="fa-solid fa-arrow-right"></i>
             </a>
 
-
-            <a
-                href="#contact"
-                class="btn secondary-btn"
-            >
+            <a href="#contact" class="btn secondary-btn">
                 Contact Me
             </a>
 
-
         </div>
 
+        <div class="hero-info">
 
-    </div>
-
-
-
-    <!-- PROFILE AREA -->
-
-    <div class="hero-image">
-
-
-        <div class="profile-ring">
-
-
-            <div class="profile-glow">
-
-
-                <img
-                    src="assets/images/profile.jpg"
-                    alt="Nithiya Sree R"
-                >
-
-
+            <div>
+                <span>01</span>
+                <p>GCT · COIMBATORE</p>
             </div>
 
+            <div>
+                <span>02</span>
+                <p>B.E. CSE · 2025–2029</p>
+            </div>
+
+            <div>
+                <span>03</span>
+                <p>ASPIRING SOFTWARE DEVELOPER</p>
+            </div>
 
         </div>
 
-
-        <div class="hero-orbit orbit-one"></div>
-
-        <div class="hero-orbit orbit-two"></div>
-
-
     </div>
 
+
+    <!-- PROFILE -->
+
+    <div class="hero-photo-area">
+
+        <div class="photo-label top-label">
+            PROFILE / 01
+        </div>
+
+        <div class="profile-frame">
+
+            <div class="profile-corner corner-one"></div>
+            <div class="profile-corner corner-two"></div>
+            <div class="profile-corner corner-three"></div>
+            <div class="profile-corner corner-four"></div>
+
+            <img
+                src="assets/documents/image/profile.jpg"
+                alt="Nithiya Sree R"
+                class="profile-image">
+
+        </div>
+
+        <div class="photo-label bottom-label">
+            NITHIYA SREE R
+        </div>
+
+    </div>
 
 </section>
 
 
+<!-- =========================
+     ABOUT
+========================= -->
 
-<!-- =====================================================
-     ABOUT ME
-===================================================== -->
-
-<section
-    class="section"
-    id="about"
->
-
+<section class="section about-section" id="about">
 
     <div class="section-heading">
 
-        <div>
-            <span>01</span>
-
-            <p>ABOUT ME</p>
-        </div>
+        <span class="section-number">02 / ABOUT</span>
 
         <h2>
-            Who I Am
+            A curious mind
+            <span>building with code.</span>
         </h2>
 
     </div>
 
 
+    <div class="about-grid">
 
-    <div class="about-layout">
+        <div class="about-main">
 
-
-        <div class="about-intro">
-
-            <div class="about-number">
-                01
-            </div>
-
-            <h3>
-                Learning.
-                <span>Building.</span>
-                Growing.
-            </h3>
-
-        </div>
-
-
-
-        <div class="about-card">
-
-
-            <p>
-
+            <p class="large-text">
                 I am a Computer Science and Engineering student
-                with a strong interest in programming, software
-                development, and problem solving.
-
+                who enjoys learning how technology works and
+                turning ideas into practical solutions.
             </p>
-
 
             <p>
-
-                My learning journey includes programming languages
-                such as <strong>C, Java, Python, and R</strong>,
-                along with SQL and application development using
-                MIT App Inventor.
-
+                My interests include programming, application
+                development, problem solving, databases and
+                emerging technologies. I enjoy exploring new
+                concepts and improving my technical skills
+                through hands-on projects.
             </p>
-
-
-            <p>
-
-                I believe that the best way to learn technology
-                is by building projects. Through my academic and
-                personal projects, I have explored different areas
-                including C-based applications, mobile application
-                development, and interdisciplinary projects
-                combining ECE and CSE concepts.
-
-            </p>
-
-
-            <p>
-
-                I am continuously working on improving my technical
-                knowledge, logical thinking, communication skills,
-                and ability to develop practical solutions.
-
-            </p>
-
 
         </div>
 
+
+        <div class="about-side">
+
+            <div class="info-box">
+
+                <span>EDUCATION</span>
+
+                <h3>
+                    Government College
+                    of Technology
+                </h3>
+
+                <p>
+                    Coimbatore, Tamil Nadu
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>INTERESTS</span>
+
+                <p>
+                    Software Development<br>
+                    Problem Solving<br>
+                    Technology<br>
+                    Creative Projects
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="about-bottom">
+
+        <div class="mini-stat">
+            <strong>04+</strong>
+            <span>Programming Languages</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>05+</strong>
+            <span>Academic / Personal Projects</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>01</strong>
+            <span>Science Exhibition Award</span>
+        </div>
 
     </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      SKILLS
-===================================================== -->
+========================= -->
 
-<section
-    class="section"
-    id="skills"
->
-
+<section class="section skills-section" id="skills">
 
     <div class="section-heading">
 
-        <div>
-            <span>02</span>
-
-            <p>TECH STACK</p>
-        </div>
+        <span class="section-number">03 / SKILLS</span>
 
         <h2>
-            Skills & Technologies
+            Tools I use to
+            <span>create & solve.</span>
         </h2>
 
     </div>
-
-
-
-    <p class="section-intro">
-
-        Technologies, tools, and skills that I am learning
-        and using throughout my academic journey.
-
-    </p>
-
 
 
     <div class="skills-grid">
 
+        <div class="skill-box">
 
+            <span class="skill-index">01</span>
 
-        <!-- PROGRAMMING -->
-
-        <article class="skill-card">
-
-
-            <div class="skill-top">
-
-                <div class="skill-icon">
-                    &lt;/&gt;
-                </div>
-
-                <span class="skill-number">
-                    01
-                </span>
-
-            </div>
-
-
-            <h3>
-                Programming
-            </h3>
-
+            <h3>Programming</h3>
 
             <p>
-                Programming languages used for learning
-                fundamentals and developing applications.
+                C · Java · Python · R
             </p>
 
-
-            <div class="skill-tags">
-
-                <span>C</span>
-                <span>Java</span>
-                <span>Python</span>
-                <span>R</span>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- DATABASE -->
-
-        <article class="skill-card">
-
-
-            <div class="skill-top">
-
-                <div class="skill-icon">
-                    DB
-                </div>
-
-                <span class="skill-number">
-                    02
-                </span>
-
-            </div>
-
-
-            <h3>
-                Database
-            </h3>
-
-
-            <p>
-                Working with structured data and
-                database concepts.
-            </p>
-
-
-            <div class="skill-tags">
-
-                <span>SQL</span>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- APPLICATION DEVELOPMENT -->
-
-        <article class="skill-card">
-
-
-            <div class="skill-top">
-
-                <div class="skill-icon">
-                    📱
-                </div>
-
-                <span class="skill-number">
-                    03
-                </span>
-
-            </div>
-
-
-            <h3>
-                Application Development
-            </h3>
-
-
-            <p>
-                Creating simple interactive mobile
-                applications and user interfaces.
-            </p>
-
-
-            <div class="skill-tags">
-
-                <span>MIT App Inventor</span>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- COMPUTER SCIENCE -->
-
-        <article class="skill-card">
-
-
-            <div class="skill-top">
-
-                <div class="skill-icon">
-                    🧠
-                </div>
-
-                <span class="skill-number">
-                    04
-                </span>
-
-            </div>
-
-
-            <h3>
-                Computer Science
-            </h3>
-
-
-            <p>
-                Core concepts that support programming
-                and software development.
-            </p>
-
-
-            <div class="skill-tags">
-
-                <span>DSA</span>
-                <span>OOP</span>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- TOOLS -->
-
-        <article class="skill-card">
-
-
-            <div class="skill-top">
-
-                <div class="skill-icon">
-                    ⚙
-                </div>
-
-                <span class="skill-number">
-                    05
-                </span>
-
-            </div>
-
-
-            <h3>
-                Tools & Productivity
-            </h3>
-
-
-            <p>
-                Tools used for development, documentation,
-                design, and productivity.
-            </p>
-
-
-            <div class="skill-tags">
-
-                <span>Git</span>
-                <span>Canva</span>
-                <span>MS Word</span>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- SOFT SKILLS -->
-
-        <article class="skill-card">
-
-
-            <div class="skill-top">
-
-                <div class="skill-icon">
-                    ✦
-                </div>
-
-                <span class="skill-number">
-                    06
-                </span>
-
-            </div>
-
-
-            <h3>
-                Soft Skills
-            </h3>
-
-
-            <p>
-                Personal skills that support teamwork,
-                communication, and problem solving.
-            </p>
-
-
-            <div class="skill-tags">
-
-                <span>Communication</span>
-                <span>Time Management</span>
-                <span>Problem Solving</span>
-                <span>Teamwork</span>
-
-            </div>
-
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FEATURED PROJECTS
-===================================================== -->
-
-<section
-    class="section projects-section"
-    id="projects"
->
-
-
-    <div class="section-heading">
-
-        <div>
-            <span>03</span>
-
-            <p>FEATURED WORK</p>
         </div>
 
-        <h2>
-            Projects I've Built
-        </h2>
+
+        <div class="skill-box">
+
+            <span class="skill-index">02</span>
+
+            <h3>Database</h3>
+
+            <p>
+                SQL · Database Concepts
+            </p>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <span class="skill-index">03</span>
+
+            <h3>Development</h3>
+
+            <p>
+                HTML · CSS · JavaScript
+            </p>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <span class="skill-index">04</span>
+
+            <h3>Application</h3>
+
+            <p>
+                MIT App Inventor · Java Applications
+            </p>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <span class="skill-index">05</span>
+
+            <h3>Computer Science</h3>
+
+            <p>
+                DSA · OOP · Problem Solving
+            </p>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <span class="skill-index">06</span>
+
+            <h3>Tools</h3>
+
+            <p>
+                GitHub · IntelliJ IDEA · VS Code
+            </p>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <span class="skill-index">07</span>
+
+            <h3>Productivity</h3>
+
+            <p>
+                Microsoft Office · Canva
+            </p>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <span class="skill-index">08</span>
+
+            <h3>Soft Skills</h3>
+
+            <p>
+                Communication · Creativity · Teamwork
+            </p>
+
+        </div>
 
     </div>
-
-
-
-    <p class="section-intro">
-
-        A collection of academic and interdisciplinary
-        projects where I apply programming, problem-solving,
-        and creative thinking.
-
-    </p>
-
-
-
-    <div
-        class="projects-grid"
-        id="projectsGrid"
-    >
-
-        <!-- PROJECTS GENERATED BY JAVASCRIPT -->
-
-    </div>
-
 
 </section>
 
 
+<!-- =========================
+     PROJECTS
+========================= -->
 
-<!-- =====================================================
+<section class="section projects-section" id="projects">
+
+    <div class="section-heading projects-heading">
+
+        <div>
+
+            <span class="section-number">
+                04 / PROJECTS
+            </span>
+
+            <h2>
+                Things I've
+                <span>built.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            A collection of academic and personal
+            projects exploring software, IoT,
+            renewable energy and web development.
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid" id="projectsGrid">
+        <!-- Projects generated by JavaScript -->
+    </div>
+
+</section>
+
+
+<!-- =========================
      ACHIEVEMENTS
-===================================================== -->
+========================= -->
 
-<section
-    class="section"
-    id="achievements"
->
-
+<section class="section achievement-section" id="achievements">
 
     <div class="section-heading">
 
-        <div>
-            <span>04</span>
-
-            <p>ACHIEVEMENTS</p>
-        </div>
+        <span class="section-number">
+            05 / ACHIEVEMENTS
+        </span>
 
         <h2>
-            Achievements & Certifications
+            Moments that
+            <span>matter.</span>
         </h2>
 
     </div>
 
 
+    <div class="achievement-layout">
 
-    <div class="achievement-card">
-
-
-        <div class="achievement-image">
-
-
-            <img
-                src="assets/images/certificate.jpg"
-                alt="Certificate of Merit"
-            >
-
-
-            <div class="image-overlay">
-
-                <span>
-                    CERTIFICATE OF MERIT
-                </span>
-
-            </div>
-
-
+        <div class="achievement-number">
+            01
         </div>
-
 
 
         <div class="achievement-content">
 
-
-            <span class="achievement-badge">
-                🏆 THIRD PRIZE
+            <span>
+                SCIENCE EXHIBITION · 2026
             </span>
 
-
-            <p class="achievement-date">
-                13.03.2026
-            </p>
-
-
             <h3>
-                Science Exhibition
+                Third Prize
             </h3>
 
-
-            <p class="achievement-event">
-
-                National Science Day Event
-
+            <p>
+                Received Third Prize at the Science Exhibition
+                conducted as part of the National Science Day
+                event on 13.03.2026.
             </p>
-
 
             <p>
-
-                Certificate of Merit awarded by
-                Government College of Technology, Coimbatore
-                for securing Third Place in the Science Exhibition.
-
+                The project focused on a
+                <strong>
+                    Solar-Powered Wireless Charging Road
+                    for Electric Vehicles.
+                </strong>
             </p>
 
+            <button
+                class="text-button"
+                type="button"
+                onclick="openCertificate()">
 
-            <div class="achievement-details">
+                View Certificate
+                <i class="fa-solid fa-arrow-right"></i>
 
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ACADEMIC
+========================= -->
+
+<section class="section academic-section" id="academic">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            06 / ACADEMIC
+        </span>
+
+        <h2>
+            Academic
+            <span>journey.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="academic-grid">
+
+        <div class="academic-card main-academic">
+
+            <span class="academic-tag">
+                CURRENT
+            </span>
+
+            <h3>
+                B.E. Computer Science
+                & Engineering
+            </h3>
+
+            <p>
+                Government College of Technology,
+                Coimbatore
+            </p>
+
+            <strong>
+                2025 — 2029
+            </strong>
+
+        </div>
+
+
+        <div class="academic-card">
+
+            <span class="academic-tag">
+                SEMESTER 01
+            </span>
+
+            <h3>GPA</h3>
+
+            <strong class="big-number">
+                9.46
+            </strong>
+
+        </div>
+
+
+        <div class="academic-card">
+
+            <span class="academic-tag">
+                SEMESTER 02
+            </span>
+
+            <h3>GPA</h3>
+
+            <strong class="big-number">
+                9.78
+            </strong>
+
+        </div>
+
+
+        <div class="academic-card">
+
+            <span class="academic-tag">
+                HSC
+            </span>
+
+            <h3>Higher Secondary</h3>
+
+            <strong class="big-number">
+                97.83%
+            </strong>
+
+            <p>
+                587 / 600
+            </p>
+
+        </div>
+
+
+        <div class="academic-card">
+
+            <span class="academic-tag">
+                SSLC
+            </span>
+
+            <h3>Secondary School</h3>
+
+            <strong class="big-number">
+                97%
+            </strong>
+
+            <p>
+                485 / 500
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     OBJECTIVE
+========================= -->
+
+<section class="section objective-section" id="objective">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            07 / OBJECTIVE
+        </span>
+
+        <h2>
+            Where I'm
+            <span>heading.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="objective-content">
+
+        <div class="objective-line">
+            <span>SHORT TERM</span>
+
+            <p>
+                To strengthen my programming, software
+                development and problem-solving skills
+                through practical projects and continuous
+                learning.
+            </p>
+        </div>
+
+
+        <div class="objective-line">
+            <span>LONG TERM</span>
+
+            <p>
+                To build a meaningful career in the software
+                industry by developing reliable, innovative
+                and useful technology solutions.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CREATIVE SIDE
+========================= -->
+
+<section class="section creative-section" id="creative">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            08 / CREATIVE SIDE
+        </span>
+
+        <h2>
+            Beyond the
+            <span>code.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="creative-grid">
+
+        <div class="creative-intro">
+
+            <p class="large-text">
+                Technology is only one part of who I am.
+            </p>
+
+            <p>
+                I also enjoy exploring creative ideas,
+                visual design and finding new ways to
+                express concepts.
+            </p>
+
+        </div>
+
+
+        <div class="creative-list">
+
+            <div>
+                <span>01</span>
+                <h3>Creative Thinking</h3>
+            </div>
+
+            <div>
+                <span>02</span>
+                <h3>Visual Design</h3>
+            </div>
+
+            <div>
+                <span>03</span>
+                <h3>Exploring Ideas</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RESUME
+========================= -->
+
+<section class="section resume-section" id="resume">
+
+    <div class="resume-box">
+
+        <div>
+
+            <span class="section-number">
+                09 / RESUME
+            </span>
+
+            <h2>
+                Want to know
+                <span>more?</span>
+            </h2>
+
+            <p>
+                View my resume to explore my education,
+                skills, projects and experience.
+            </p>
+
+        </div>
+
+
+        <a
+            href="assets/documents/resume.pdf"
+            target="_blank"
+            rel="noopener"
+            class="btn primary-btn">
+
+            View Resume
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+    <!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            10 / CONTACT
+        </span>
+
+        <h2>
+            Let's connect
+            <span>and create.</span>
+        </h2>
+
+        <p>
+            Have an idea, opportunity or simply want to
+            connect? Feel free to reach out.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+
+                <span class="contact-number">01</span>
 
                 <div>
 
-                    <span>
-                        Project
+                    <span class="contact-label">
+                        EMAIL
                     </span>
 
-                    <strong>
-                        Solar Powered Wireless Charging Road for EV
-                    </strong>
+                    <a href="mailto:nithyasree1409@gmail.com">
+                        nithyasree1409@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-number">02</span>
+
+                <div>
+
+                    <span class="contact-label">
+                        LINKEDIN
+                    </span>
+
+                    <a
+                        href="https://www.linkedin.com/in/nithiyasree-r-a75b233a3"
+                        target="_blank"
+                        rel="noopener">
+
+                        LinkedIn Profile
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-number">03</span>
+
+                <div>
+
+                    <span class="contact-label">
+                        GITHUB
+                    </span>
+
+                    <a
+                        href="https://github.com/Nithiya1409"
+                        target="_blank"
+                        rel="noopener">
+
+                        github.com/Nithiya1409
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+
+        <form
+            class="contact-form"
+            action="https://formspree.io/f/xwlpqldj"
+            method="POST">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        YOUR NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required>
 
                 </div>
 
 
-                <div>
+                <div class="form-group">
 
-                    <span>
-                        Achievement
-                    </span>
+                    <label for="email">
+                        EMAIL
+                    </label>
 
-                    <strong>
-                        Third Place
-                    </strong>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
 
                 </div>
 
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="subject">
+                    SUBJECT
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="What would you like to discuss?"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    MESSAGE
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message..."
+                    required></textarea>
 
             </div>
 
 
             <button
-                class="btn primary-btn"
-                onclick="openCertificate()"
-            >
-                View Certificate
+                type="submit"
+                class="btn primary-btn">
+
+                Send Message
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </button>
 
-
-        </div>
-
+        </form>
 
     </div>
-
 
 </section>
 
 
+<!-- =========================
+     SOCIAL / FINAL CTA
+========================= -->
 
-<!-- =====================================================
-     ACADEMIC PROFILE
-===================================================== -->
+<section class="final-cta">
 
-<section
-    class="section"
-    id="academic"
->
+    <div class="cta-line"></div>
 
+    <div class="cta-content">
 
-    <div class="section-heading">
-
-        <div>
-            <span>05</span>
-
-            <p>ACADEMICS</p>
-        </div>
+        <span>
+            HAVE AN IDEA?
+        </span>
 
         <h2>
-            Academic Profile
+            Let's build something
+            <span>meaningful.</span>
         </h2>
 
-    </div>
+        <a href="mailto:nithyasree1409@gmail.com"
+           class="text-button">
 
+            Get in touch
 
+            <i class="fa-solid fa-arrow-right"></i>
 
-    <div class="academic-timeline">
-
-
-
-        <!-- DEGREE -->
-
-        <div class="academic-item">
-
-
-            <div class="academic-year">
-                2025–2029
-            </div>
-
-
-            <div class="academic-card">
-
-
-                <span class="academic-level">
-                    UNDERGRADUATE
-                </span>
-
-
-                <h3>
-                    B.E. Computer Science & Engineering
-                </h3>
-
-
-                <p>
-                    Government College of Technology,
-                    Coimbatore
-                </p>
-
-
-                <div class="academic-results">
-
-
-                    <div>
-
-                        <span>
-                            Semester 1 GPA
-                        </span>
-
-                        <strong>
-                            9.46
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            Semester 2 GPA
-                        </span>
-
-                        <strong>
-                            9.78
-                        </strong>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- HSC -->
-
-        <div class="academic-item">
-
-
-            <div class="academic-year">
-                2023–2025
-            </div>
-
-
-            <div class="academic-card">
-
-
-                <span class="academic-level">
-                    HIGHER SECONDARY
-                </span>
-
-
-                <h3>
-                    HSC
-                </h3>
-
-
-                <p>
-                    Aditya's Vivekananda Matriculation
-                    Higher Secondary School, Villupuram
-                </p>
-
-
-                <div class="academic-results">
-
-
-                    <div>
-
-                        <span>
-                            Marks
-                        </span>
-
-                        <strong>
-                            587 / 600
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            Percentage
-                        </span>
-
-                        <strong>
-                            97.83%
-                        </strong>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- SSLC -->
-
-        <div class="academic-item">
-
-
-            <div class="academic-year">
-                2022–2023
-            </div>
-
-
-            <div class="academic-card">
-
-
-                <span class="academic-level">
-                    SECONDARY EDUCATION
-                </span>
-
-
-                <h3>
-                    SSLC / 10th
-                </h3>
-
-
-                <p>
-                    Seventh Day Adventist Matriculation School,
-                    Villupuram
-                </p>
-
-
-                <div class="academic-results">
-
-
-                    <div>
-
-                        <span>
-                            Marks
-                        </span>
-
-                        <strong>
-                            485 / 500
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            Percentage
-                        </span>
-
-                        <strong>
-                            97%
-                        </strong>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
+        </a>
 
     </div>
 
-
-</section>
-
-<!-- =====================================================
-     CAREER OBJECTIVE
-===================================================== -->
-
-<section
-    class="section objective-section"
-    id="objective"
->
-
-
-    <div class="section-heading">
-
-        <div>
-            <span>06</span>
-
-            <p>MY DIRECTION</p>
-        </div>
-
-        <h2>
-            Career Objective
-        </h2>
-
-    </div>
-
-
-
-    <div class="objective-card">
-
-
-        <div class="objective-icon">
-            ✦
-        </div>
-
-
-        <div class="objective-content">
-
-
-            <p class="objective-main">
-
-                To build a strong career in software development
-                by continuously improving my programming,
-                problem-solving, and technical skills, while
-                developing practical solutions that create
-                meaningful real-world impact.
-
-            </p>
-
-
-
-            <div class="goals-grid">
-
-
-                <!-- SHORT TERM -->
-
-                <div class="goal-card">
-
-
-                    <span class="goal-label">
-                        SHORT TERM
-                    </span>
-
-
-                    <h3>
-                        Build Strong Foundations
-                    </h3>
-
-
-                    <p>
-
-                        Strengthen programming, DSA,
-                        problem-solving, and software
-                        development skills through
-                        continuous learning and
-                        practical projects.
-
-                    </p>
-
-
-                </div>
-
-
-
-                <!-- LONG TERM -->
-
-                <div class="goal-card">
-
-
-                    <span class="goal-label">
-                        LONG TERM
-                    </span>
-
-
-                    <h3>
-                        Become a Skilled Professional
-                    </h3>
-
-
-                    <p>
-
-                        Become a skilled software professional
-                        capable of designing, developing,
-                        and delivering reliable technology
-                        solutions.
-
-                    </p>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-    <!-- =====================================================
-     CAREER OBJECTIVE
-===================================================== -->
-
-<section
-    class="section objective-section"
-    id="objective"
->
-
-
-    <div class="section-heading">
-
-        <div>
-            <span>06</span>
-
-            <p>MY DIRECTION</p>
-        </div>
-
-        <h2>
-            Career Objective
-        </h2>
-
-    </div>
-
-
-
-    <div class="objective-card">
-
-
-        <div class="objective-icon">
-            ✦
-        </div>
-
-
-        <div class="objective-content">
-
-
-            <p class="objective-main">
-
-                To build a strong career in software development
-                by continuously improving my programming,
-                problem-solving, and technical skills, while
-                developing practical solutions that create
-                meaningful real-world impact.
-
-            </p>
-
-
-
-            <div class="goals-grid">
-
-
-                <!-- SHORT TERM -->
-
-                <div class="goal-card">
-
-
-                    <span class="goal-label">
-                        SHORT TERM
-                    </span>
-
-
-                    <h3>
-                        Build Strong Foundations
-                    </h3>
-
-
-                    <p>
-
-                        Strengthen programming, DSA,
-                        problem-solving, and software
-                        development skills through
-                        continuous learning and
-                        practical projects.
-
-                    </p>
-
-
-                </div>
-
-
-
-                <!-- LONG TERM -->
-
-                <div class="goal-card">
-
-
-                    <span class="goal-label">
-                        LONG TERM
-                    </span>
-
-
-                    <h3>
-                        Become a Skilled Professional
-                    </h3>
-
-
-                    <p>
-
-                        Become a skilled software professional
-                        capable of designing, developing,
-                        and delivering reliable technology
-                        solutions.
-
-                    </p>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
+    <div class="cta-line"></div>
 
 </section>
 
 
+</main>
 
-<!-- =====================================================
-     CREATIVE SIDE
-===================================================== -->
 
-<section
-    class="section creative-section"
-    id="creative"
->
-
-
-    <div class="section-heading">
-
-        <div>
-            <span>07</span>
-
-            <p>BEYOND TECHNOLOGY</p>
-        </div>
-
-        <h2>
-            My Creative Side
-        </h2>
-
-    </div>
-
-
-
-    <div class="creative-card">
-
-
-        <div class="creative-icon">
-            ✦
-        </div>
-
-
-        <div class="creative-content">
-
-
-            <span class="creative-label">
-                CREATIVITY
-            </span>
-
-
-            <h3>
-                Fashion Designing
-            </h3>
-
-
-            <p>
-
-                Beyond technology, I am passionate about
-                Fashion Designing. I enjoy exploring creativity,
-                design, colours, patterns, and the process of
-                turning ideas into unique designs.
-
-            </p>
-
-
-            <p>
-
-                I believe creativity is an important part of
-                how I learn, express ideas, and approach
-                problems.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     RESUME
-===================================================== -->
-
-<section
-    class="section resume-section"
-    id="resume"
->
-
-
-    <div class="section-heading">
-
-        <div>
-            <span>08</span>
-
-            <p>MY DOCUMENT</p>
-        </div>
-
-        <h2>
-            Resume
-        </h2>
-
-    </div>
-
-
-
-    <div class="resume-card">
-
-
-        <div class="resume-info">
-
-
-            <span class="resume-label">
-                PROFESSIONAL PROFILE
-            </span>
-
-
-            <h3>
-                My Professional Resume
-            </h3>
-
-
-            <p>
-
-                Explore my academic background,
-                technical skills, projects,
-                achievements, and career objectives.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="resume-buttons">
-
-
-            <a
-                href="assets/documents/resume.pdf"
-                target="_blank"
-                class="btn primary-btn"
-            >
-
-                View Resume
-                <span>→</span>
-
-            </a>
-
-
-            <a
-                href="assets/documents/resume.pdf"
-                download
-                class="btn secondary-btn"
-            >
-
-                Download Resume
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-    class="section contact-section"
-    id="contact"
->
-
-
-    <div class="section-heading">
-
-        <div>
-            <span>09</span>
-
-            <p>GET IN TOUCH</p>
-        </div>
-
-        <h2>
-            Contact Me
-        </h2>
-
-    </div>
-
-
-
-    <div class="contact-container">
-
-
-
-        <!-- =============================================
-             CONTACT INFORMATION
-        ============================================== -->
-
-        <div class="contact-info">
-
-
-            <span class="contact-label">
-                LET'S CONNECT
-            </span>
-
-
-            <h3>
-                Have an idea?
-                <br>
-                Let's talk.
-            </h3>
-
-
-            <p>
-
-                Have a project idea, opportunity,
-                or simply want to connect?
-                Feel free to reach out.
-
-            </p>
-
-
-
-            <div class="contact-links">
-
-
-
-                <!-- EMAIL -->
-
-                <a
-                    href="mailto:nithyasree1409@gmail.com"
-                    class="contact-link"
-                >
-
-
-                    <div class="contact-icon">
-                        ✉
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            Email
-                        </span>
-
-                        <strong>
-                            nithyasree1409@gmail.com
-                        </strong>
-
-                    </div>
-
-
-                </a>
-
-
-
-                <!-- LINKEDIN -->
-
-                <a
-                    href="https://www.linkedin.com/in/nithiyasree-r-a75b233a3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-link"
-                >
-
-
-                    <div class="contact-icon">
-                        in
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            LinkedIn
-                        </span>
-
-                        <strong>
-                            Connect with me
-                        </strong>
-
-                    </div>
-
-
-                </a>
-
-
-
-                <!-- GITHUB -->
-
-                <a
-                    href="https://github.com/Nithiya1409"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-link"
-                >
-
-
-                    <div class="contact-icon">
-                        &lt;/&gt;
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            GitHub
-                        </span>
-
-                        <strong>
-                            Nithiya1409
-                        </strong>
-
-                    </div>
-
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =============================================
-             CONTACT FORM
-        ============================================== -->
-
-        <div class="contact-form-wrapper">
-
-
-            <form
-                class="contact-form"
-                id="contactForm"
-                action="https://formspree.io/f/xwlpqldj"
-                method="POST"
-            >
-
-
-                <div class="form-group">
-
-
-                    <label for="contactName">
-                        Your Name
-                    </label>
-
-
-                    <input
-                        type="text"
-                        id="contactName"
-                        name="name"
-                        placeholder="Enter your name"
-                        required
-                    >
-
-
-                </div>
-
-
-
-                <div class="form-group">
-
-
-                    <label for="contactEmail">
-                        Your Email
-                    </label>
-
-
-                    <input
-                        type="email"
-                        id="contactEmail"
-                        name="email"
-                        placeholder="Enter your email"
-                        required
-                    >
-
-
-                </div>
-
-
-
-                <div class="form-group">
-
-
-                    <label for="contactMessage">
-                        Your Message
-                    </label>
-
-
-                    <textarea
-                        id="contactMessage"
-                        name="message"
-                        rows="6"
-                        placeholder="Write your message..."
-                        required
-                    ></textarea>
-
-
-                </div>
-
-
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="New Portfolio Contact Message"
-                >
-
-
-
-                <button
-                    type="submit"
-                    class="btn primary-btn"
-                >
-
-                    Send Message
-                    <span>→</span>
-
-                </button>
-
-
-            </form>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer class="footer">
 
-
-    <div class="footer-inner">
-
+    <div class="footer-top">
 
         <div class="footer-brand">
 
-
-            <h3>
-                NITHIYA
-                <span>SREE R</span>
-            </h3>
-
+            <a href="#home" class="logo">
+                NITHIYA<span>.</span>
+            </a>
 
             <p>
                 Computer Science & Engineering Student
+                at Government College of Technology,
+                Coimbatore.
             </p>
-
 
         </div>
 
 
+        <div class="footer-links">
 
-        <div class="footer-right">
+            <a href="https://github.com/Nithiya1409"
+               target="_blank"
+               rel="noopener">
 
+                GitHub
 
-            <p>
+            </a>
 
-                ©
-                <span id="year"></span>
+            <a
+                href="https://www.linkedin.com/in/nithiyasree-r-a75b233a3"
+                target="_blank"
+                rel="noopener">
 
-                Nithiya Sree R
+                LinkedIn
 
-            </p>
+            </a>
 
+            <a href="mailto:nithyasree1409@gmail.com">
 
-            <span>
-                Built with curiosity & code.
-            </span>
+                Email
 
+            </a>
 
         </div>
-
 
     </div>
 
+
+    <div class="footer-bottom">
+
+        <span>
+            © <span id="year"></span> Nithiya Sree R
+        </span>
+
+        <span>
+            DESIGNED & BUILT WITH CODE
+        </span>
+
+    </div>
 
 </footer>
 
 
-
-<!-- =====================================================
-     PROJECT DETAILS MODAL
-===================================================== -->
+<!-- =========================
+     PROJECT MODAL
+========================= -->
 
 <div
     class="modal"
     id="projectModal"
-    aria-hidden="true"
->
-
+    aria-hidden="true">
 
     <div class="modal-box">
 
-
         <button
             class="modal-close"
+            type="button"
             onclick="closeProject()"
-            aria-label="Close project"
-        >
+            aria-label="Close project">
 
-            ×
+            <i class="fa-solid fa-xmark"></i>
 
         </button>
 
 
         <div
-            id="projectModalContent"
-            class="project-modal-content"
-        >
+            class="modal-content"
+            id="projectModalContent">
 
-            <!-- Project details are inserted by JavaScript -->
+            <!-- Project information inserted by JavaScript -->
 
         </div>
 
-
     </div>
-
 
 </div>
 
 
-
-<!-- =====================================================
+<!-- =========================
      CERTIFICATE MODAL
-===================================================== -->
+========================= -->
 
 <div
     class="modal"
     id="certificateModal"
-    aria-hidden="true"
->
+    aria-hidden="true">
 
-
-    <div class="modal-box certificate-modal-box">
-
+    <div class="certificate-modal-box">
 
         <button
             class="modal-close"
+            type="button"
             onclick="closeCertificate()"
-            aria-label="Close certificate"
-        >
+            aria-label="Close certificate">
 
-            ×
+            <i class="fa-solid fa-xmark"></i>
 
         </button>
 
 
-        <div class="certificate-modal-content">
+        <div class="certificate-heading">
 
-
-            <p class="modal-domain">
-                CERTIFICATE OF MERIT
-            </p>
-
+            <span>
+                ACHIEVEMENT / CERTIFICATE
+            </span>
 
             <h2>
-                Third Prize — Science Exhibition
+                Science Exhibition
             </h2>
-
-
-            <p class="modal-summary">
-
-                National Science Day Event
-                · Government College of Technology,
-                Coimbatore
-
-            </p>
-
-
-            <div class="certificate-preview">
-
-
-                <img
-                    src="assets/images/certificate.jpg"
-                    alt="Certificate of Merit"
-                >
-
-
-            </div>
-
-
-            <div class="modal-actions">
-
-
-                <a
-                    href="assets/images/certificate.jpg"
-                    target="_blank"
-                    class="btn primary-btn"
-                >
-
-                    Open Certificate
-                    <span>→</span>
-
-                </a>
-
-
-            </div>
-
 
         </div>
 
 
-    </div>
+        <div class="certificate-image-wrapper">
 
+            <img
+                src="assets/documents/image/certificate.png"
+                alt="Science Exhibition Certificate"
+                class="certificate-image">
+
+        </div>
+
+    </div>
 
 </div>
 
 
-
-<!-- =====================================================
+<!-- =========================
      JAVASCRIPT
-===================================================== -->
+========================= -->
 
 <script src="script.js"></script>
 
-
 </body>
-
-    </html>
-
-
-
-<!-- ========
+</html>
