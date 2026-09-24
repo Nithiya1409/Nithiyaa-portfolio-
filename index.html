@@ -726,6 +726,8 @@
 
     <div class="contact-grid">
 
+        <!-- CONTACT INFORMATION -->
+
         <div class="contact-info">
 
             <p>
@@ -733,29 +735,56 @@
                 Feel free to connect with me.
             </p>
 
+
+            <!-- EMAIL -->
+
             <a
-                href="mailto:nithiyasree1409@gmail.com"
+                href="mailto:nithyasree1409@gmail.com"
                 class="contact-link"
             >
-                ✉ nithiyasree1409@gmail.com
+                ✉ nithyasree1409@gmail.com
             </a>
+
+
+            <!-- LINKEDIN -->
 
             <a
                 href="https://www.linkedin.com/in/nithiyasree-r-a75b233a3"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="contact-link"
             >
                 in LinkedIn
             </a>
 
+
+            <!-- GITHUB -->
+
+            <a
+                href="https://github.com/Nithiya1409"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+            >
+                ◉ GitHub
+            </a>
+
         </div>
 
 
-        <form class="contact-form" id="contactForm">
+        <!-- CONTACT FORM -->
+
+        <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/xwlpqldj"
+            method="POST"
+        >
 
             <input
                 type="text"
                 id="contactName"
+                name="name"
                 placeholder="Your Name"
                 required
             >
@@ -763,16 +792,28 @@
             <input
                 type="email"
                 id="contactEmail"
+                name="email"
                 placeholder="Your Email"
                 required
             >
 
             <textarea
                 id="contactMessage"
+                name="message"
                 rows="6"
                 placeholder="Your Message"
                 required
             ></textarea>
+
+
+            <!-- Optional subject for the email you receive -->
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="New Portfolio Contact Message"
+            >
+
 
             <button
                 type="submit"
@@ -838,15 +879,4 @@
 
         <img
             src="assets/images/certificate.jpg"
-            alt="Certificate"
-        >
-
-    </div>
-
-</div>
-
-
-<script src="script.js"></script>
-
-</body>
-              </html>
+            alt="Certi
