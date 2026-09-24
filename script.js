@@ -128,7 +128,7 @@ const projects = [
             }
         ],
 
-        ppt: "assets/documents/human-detection-project.pptx"
+        ppt: "assets/documents/human-activity-detection.pptx"
     },
 
 
@@ -183,7 +183,7 @@ const projects = [
             }
         ],
 
-        document: "assets/documents/hangman-project.pdf"
+        document: "assets/documents/hangman.pdf"
     },
 
 
@@ -238,10 +238,10 @@ const projects = [
             }
         ],
 
-        document: "assets/documents/tictactoe-document.pdf",
+        document: "assets/documents/tictactoe.pdf",
 
         website:
-            "PASTE_YOUR_TIC_TAC_TOE_WEBSITE_LINK_HERE"
+            "https://nithiya1409.github.io/Tic-tac-toe-/"
     },
 
 
@@ -677,25 +677,18 @@ document
    CONTACT FORM
 ========================= */
 
-document
-    .getElementById("contactForm")
-    .addEventListener(
-        "submit",
-        function(event) {
+/*
+   Formspree handles the form submission directly.
 
-            event.preventDefault();
+   The form connection is already defined in index.html:
 
-            const name =
-                document.getElementById("contactName").value;
+   action="https://formspree.io/f/xwlpqldj"
+   method="POST"
 
-            alert(
-                `Thank you, ${name}! Please contact me directly through my email or LinkedIn.`
-            );
-
-            this.reset();
-
-        }
-    );
+   IMPORTANT:
+   Do NOT use event.preventDefault() here.
+   Otherwise the form submission to Formspree will be stopped.
+*/
 
 
 /* =========================
