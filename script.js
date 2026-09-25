@@ -1,146 +1,227 @@
-/* =========================================
-   NITHIYA SREE R - PORTFOLIO JAVASCRIPT
-========================================= */
+/* =========================================================
+   NITHIYA PORTFOLIO - MAIN JAVASCRIPT
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       SIDE MENU
+       ===================================================== */
+
+    const menuButton = document.querySelector(".menu-button");
+    const sideMenu = document.querySelector(".side-menu");
+    const menuOverlay = document.querySelector(".menu-overlay");
+    const menuLinks = document.querySelectorAll(".side-menu a");
+
+    function openMenu() {
+        if (sideMenu) sideMenu.classList.add("active");
+        if (menuOverlay) menuOverlay.classList.add("active");
+        document.body.classList.add("menu-open");
+    }
+
+    function closeMenu() {
+        if (sideMenu) sideMenu.classList.remove("active");
+        if (menuOverlay) menuOverlay.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    }
+
+    if (menuButton) {
+        menuButton.addEventListener("click", () => {
+            if (sideMenu && sideMenu.classList.contains("active")) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+    }
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener("click", closeMenu);
+    }
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            closeMenu();
+        });
+    });
 
 
-/* =========================================
-   1. THREE-DOT MENU
-========================================= */
+    /* =====================================================
+       ESC KEY - CLOSE MENU / MODALS
+       ===================================================== */
 
-const menuButton = document.getElementById("menuButton");
-const menuOverlay = document.getElementById("menuOverlay");
-const sideMenu = document.getElementById("sideMenu");
-const closeMenu = document.getElementById("closeMenu");
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+            closeMenu();
+            closeProjectModal();
+            closeCertificateModal();
+        }
+
+    });
 
 
-function openMenu() {
+    /* =====================================================
+       SMOOTH SCROLLING
+       ===================================================== */
 
-    sideMenu.classList.add("active");
-    menuOverlay.classList.add("active");
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    menuButton.setAttribute(
-        "aria-expanded",
-        "true"
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       PROFILE IMAGE CLICK EFFECT
+       ===================================================== */
+
+    const profileImage = document.querySelector(".profile-image");
+
+    if (profileImage) {
+
+        profileImage.addEventListener("click", () => {
+
+            profileImage.classList.toggle("active");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CURRENT SECTION HIGHLIGHT
+       ===================================================== */
+
+    const sections = document.querySelectorAll("section[id]");
+    const navigationLinks = document.querySelectorAll(
+        '.side-menu a[href^="#"]'
     );
 
-    document.body.classList.add("menu-open");
-}
+    function updateActiveNavigation() {
 
+        let currentSection = "";
 
-function closeSideMenu() {
+        sections.forEach(section => {
 
-    sideMenu.classList.remove("active");
-    menuOverlay.classList.remove("active");
+            const sectionTop = section.offsetTop - 200;
+            const sectionHeight = section.offsetHeight;
 
-    menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
+            }
 
-    document.body.classList.remove("menu-open");
-}
+        });
 
+        navigationLinks.forEach(link => {
 
-menuButton.addEventListener(
-    "click",
-    openMenu
-);
+            link.classList.remove("active");
 
+            if (
+                currentSection &&
+                link.getAttribute("href") === `#${currentSection}`
+            ) {
+                link.classList.add("active");
+            }
 
-closeMenu.addEventListener(
-    "click",
-    closeSideMenu
-);
+        });
 
+    }
 
-menuOverlay.addEventListener(
-    "click",
-    closeSideMenu
-);
+    window.addEventListener("scroll", updateActiveNavigation);
 
-
-/* Close menu after selecting a section */
-
-document.querySelectorAll(
-    ".side-menu nav a"
-).forEach(function(link) {
-
-    link.addEventListener(
-        "click",
-        closeSideMenu
-    );
+    updateActiveNavigation();
 
 });
-
-
-/* =========================================
-   2. PROJECT INFORMATION
-========================================= */
+/* =========================================================
+   PROJECT DATA
+   ========================================================= */
 
 const projects = [
 
     {
-        number: "PROJECT 1",
-
-        title:
-            "Solar Powered Wireless Charging Road for EV",
+        title: "Solar Powered Wireless Charging Road for EV",
 
         description:
-            "A concept based on solar-powered wireless charging infrastructure designed to support electric vehicles while they travel on specially designed charging roads.",
+            "A smart road concept that uses solar energy and wireless charging technology to support electric vehicle charging while travelling.",
 
-        technology:
-            "Solar Energy • Wireless Charging • Electric Vehicles",
+        technologies: [
+            "Solar Energy",
+            "Wireless Charging",
+            "Electric Vehicles"
+        ],
 
         document:
             "assets/documents/solar-project.pptx"
     },
 
-
     {
-        number: "PROJECT 2",
-
         title:
             "Camera-Free Intelligent Human Activity Detection Using Ultrasonic Sensing",
 
         description:
-            "A camera-free sensing system that uses ultrasonic sensing to detect human presence and activity while providing a privacy-aware approach to monitoring.",
+            "An intelligent activity detection system using ultrasonic sensing without depending on cameras.",
 
-        technology:
-            "Arduino • Ultrasonic Sensor • IoT • Machine Learning",
+        technologies: [
+            "Arduino",
+            "Ultrasonic Sensor",
+            "Internet of Things",
+            "Machine Learning"
+        ],
 
         document:
             "assets/documents/human-activity-detection.pptx"
     },
 
-
     {
-        number: "PROJECT 3",
-
-        title:
-            "Hangman",
+        title: "Hangman",
 
         description:
-            "An interactive word-guessing game where the player attempts to identify the hidden word before the allowed number of incorrect guesses is reached.",
+            "A browser-based Hangman game developed using front-end web technologies.",
 
-        technology:
-            "HTML • CSS • JavaScript",
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
 
         document:
             "assets/documents/hangman.pdf"
     },
 
-
     {
-        number: "PROJECT 4",
-
-        title:
-            "Tic-Tac-Toe",
+        title: "Tic-Tac-Toe",
 
         description:
-            "An interactive Tic-Tac-Toe game designed with a simple interface and responsive gameplay for two players.",
+            "An interactive Tic-Tac-Toe game developed using HTML, CSS and JavaScript.",
 
-        technology:
-            "HTML • CSS • JavaScript",
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
 
         document:
             "assets/documents/tictactoe.pdf",
@@ -149,18 +230,17 @@ const projects = [
             "https://nithiya1409.github.io/Tic-tac-toe-/"
     },
 
-
     {
-        number: "PROJECT 5",
-
-        title:
-            "CGPA Calculator",
+        title: "CGPA Calculator",
 
         description:
-            "A CGPA calculation system designed to calculate academic performance based on subjects, credits and grade points.",
+            "An academic utility designed to calculate CGPA using subject and grade information.",
 
-        technology:
-            "Programming • Calculation Logic • Academic Utility",
+        technologies: [
+            "Programming",
+            "Calculation Logic",
+            "Academic Utility"
+        ],
 
         document:
             "assets/documents/cgpa-calculator-srs.pdf"
@@ -169,376 +249,463 @@ const projects = [
 ];
 
 
-/* =========================================
-   3. CREATE PROJECT CARDS
-========================================= */
-
-const projectsGrid =
-    document.getElementById("projectsGrid");
-
-
-projects.forEach(function(project, index) {
-
-    const card =
-        document.createElement("article");
-
-    card.className =
-        "project-card";
-
-
-    card.innerHTML = `
-
-        <div class="project-number">
-            ${project.number}
-        </div>
-
-        <div class="project-card-content">
-
-            <h3>
-                ${project.title}
-            </h3>
-
-            <p>
-                ${project.description}
-            </p>
-
-            <div class="project-tech">
-                ${project.technology}
-            </div>
-
-            <button
-                type="button"
-                class="project-view-btn"
-                onclick="openProject(${index})">
-
-                View Project
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-        </div>
-
-    `;
-
-
-    projectsGrid.appendChild(card);
-
-});
-
-
-/* =========================================
-   4. PROJECT MODAL
-========================================= */
+/* =========================================================
+   PROJECT MODAL ELEMENTS
+   ========================================================= */
 
 const projectModal =
-    document.getElementById("projectModal");
+    document.querySelector(".project-modal");
 
-const projectModalContent =
-    document.getElementById(
-        "projectModalContent"
-    );
+const projectModalTitle =
+    document.querySelector(".project-modal-title");
+
+const projectModalDescription =
+    document.querySelector(".project-modal-description");
+
+const projectModalTechnologies =
+    document.querySelector(".project-modal-technologies");
+
+const projectModalDocument =
+    document.querySelector(".project-modal-document");
+
+const projectModalWebsite =
+    document.querySelector(".project-modal-website");
 
 const projectModalClose =
-    document.getElementById(
-        "projectModalClose"
-    );
+    document.querySelector(".project-modal-close");
 
 
-function openProject(index) {
+/* =========================================================
+   OPEN PROJECT MODAL
+   ========================================================= */
 
-    const project =
-        projects[index];
+function openProjectModal(index) {
+
+    const project = projects[index];
+
+    if (!project || !projectModal) {
+        return;
+    }
+
+    if (projectModalTitle) {
+        projectModalTitle.textContent = project.title;
+    }
+
+    if (projectModalDescription) {
+        projectModalDescription.textContent =
+            project.description;
+    }
 
 
-    let websiteButton = "";
+    /* Technologies */
 
+    if (projectModalTechnologies) {
 
-    /* Show website button only for
-       projects having a website */
+        projectModalTechnologies.innerHTML = "";
 
-    if (project.website) {
+        project.technologies.forEach(technology => {
 
-        websiteButton = `
+            const technologyElement =
+                document.createElement("span");
 
-            <a
-                href="${project.website}"
-                target="_blank"
-                rel="noopener"
-                class="btn primary-btn">
+            technologyElement.textContent =
+                technology;
 
-                Visit Website
+            projectModalTechnologies.appendChild(
+                technologyElement
+            );
 
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-            </a>
-
-        `;
+        });
 
     }
 
 
-    projectModalContent.innerHTML = `
+    /* Document */
 
-        <div class="project-details">
+    if (projectModalDocument) {
 
-            <span class="project-modal-number">
-                ${project.number}
-            </span>
+        if (project.document) {
 
-            <h2>
-                ${project.title}
-            </h2>
+            projectModalDocument.href =
+                project.document;
 
+            projectModalDocument.style.display =
+                "inline-flex";
 
-            <div class="detail-box">
+        } else {
 
-                <h4>
-                    ABOUT THE PROJECT
-                </h4>
+            projectModalDocument.style.display =
+                "none";
 
-                <p>
-                    ${project.description}
-                </p>
+        }
 
-            </div>
+    }
 
 
-            <div class="detail-box">
+    /* Website */
 
-                <h4>
-                    TECHNOLOGIES
-                </h4>
+    if (projectModalWebsite) {
 
-                <p>
-                    ${project.technology}
-                </p>
+        if (project.website) {
 
-            </div>
+            projectModalWebsite.href =
+                project.website;
 
+            projectModalWebsite.target =
+                "_blank";
 
-            <div class="modal-actions">
+            projectModalWebsite.rel =
+                "noopener noreferrer";
 
-                ${websiteButton}
+            projectModalWebsite.style.display =
+                "inline-flex";
 
-                <a
-                    href="${project.document}"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn secondary-btn">
+        } else {
 
-                    View Document
+            projectModalWebsite.style.display =
+                "none";
 
-                    <i class="fa-solid fa-file-lines"></i>
+        }
 
-                </a>
-
-            </div>
-
-        </div>
-
-    `;
+    }
 
 
     projectModal.classList.add("active");
 
-    projectModal.setAttribute(
-        "aria-hidden",
-        "false"
-    );
+    document.body.classList.add("modal-open");
 
-    document.body.classList.add(
-        "modal-open"
+}
+
+
+/* =========================================================
+   CLOSE PROJECT MODAL
+   ========================================================= */
+
+function closeProjectModal() {
+
+    if (!projectModal) {
+        return;
+    }
+
+    projectModal.classList.remove("active");
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+if (projectModalClose) {
+
+    projectModalClose.addEventListener(
+        "click",
+        closeProjectModal
     );
 
 }
 
 
-/* =========================================
-   5. CLOSE PROJECT MODAL
-========================================= */
+/* Close when clicking outside modal */
 
-function closeProject() {
+if (projectModal) {
 
-    projectModal.classList.remove(
-        "active"
-    );
-
-    projectModal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    document.body.classList.remove(
-        "modal-open"
-    );
-
-}
-
-
-projectModalClose.addEventListener(
-    "click",
-    closeProject
-);
-
-
-/* Close when clicking outside popup */
-
-projectModal.addEventListener(
-    "click",
-    function(event) {
+    projectModal.addEventListener("click", event => {
 
         if (event.target === projectModal) {
-
-            closeProject();
-
+            closeProjectModal();
         }
 
-    }
-);
-
-
-/* =========================================
-   6. CERTIFICATE POPUP
-========================================= */
-
-const certificateModal =
-    document.getElementById(
-        "certificateModal"
-    );
-
-
-function openCertificate() {
-
-    certificateModal.classList.add(
-        "active"
-    );
-
-    certificateModal.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-    document.body.classList.add(
-        "modal-open"
-    );
+    });
 
 }
 
 
-function closeCertificate() {
+/* =========================================================
+   PROJECT BUTTONS / CARDS
+   ========================================================= */
 
-    certificateModal.classList.remove(
-        "active"
-    );
+const projectCards =
+    document.querySelectorAll(".project-card");
 
-    certificateModal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
+projectCards.forEach((card, index) => {
 
-    document.body.classList.remove(
-        "modal-open"
-    );
+    card.addEventListener("click", () => {
 
-}
+        openProjectModal(index);
 
+    });
 
-/* Close certificate by clicking outside */
+    card.addEventListener("keydown", event => {
 
-certificateModal.addEventListener(
-    "click",
-    function(event) {
+        if (
+            event.key === "Enter" ||
+            event.key === " "
+        ) {
 
-        if (event.target === certificateModal) {
+            event.preventDefault();
 
-            closeCertificate();
+            openProjectModal(index);
 
         }
 
-    }
-);
-
-
-/* =========================================
-   7. ESCAPE KEY
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Escape") {
-
-            closeSideMenu();
-
-            closeProject();
-
-            closeCertificate();
-
-        }
-
-    }
-);
-
-
-/* =========================================
-   8. CURRENT YEAR
-========================================= */
-
-const yearElement =
-    document.getElementById("year");
-
-
-if (yearElement) {
-
-    yearElement.textContent =
-        new Date().getFullYear();
-
-}
-
-
-/* =========================================
-   9. SMOOTH SECTION NAVIGATION
-========================================= */
-
-document.querySelectorAll(
-    'a[href^="#"]'
-).forEach(function(link) {
-
-    link.addEventListener(
-        "click",
-        function(event) {
-
-            const targetId =
-                this.getAttribute("href");
-
-            if (
-                targetId === "#" ||
-                !targetId
-            ) {
-                return;
-            }
-
-
-            const target =
-                document.querySelector(
-                    targetId
-                );
-
-
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        }
-    );
+    });
 
 });
+/* =========================================================
+   CERTIFICATE MODAL
+   ========================================================= */
+
+const certificateModal =
+    document.querySelector(".certificate-modal");
+
+const certificateImage =
+    document.querySelector(".certificate-modal img");
+
+const certificateClose =
+    document.querySelector(".certificate-modal-close");
+
+
+/* =========================================================
+   OPEN CERTIFICATE
+   ========================================================= */
+
+function openCertificateModal() {
+
+    if (!certificateModal) {
+        return;
+    }
+
+    certificateModal.classList.add("active");
+
+    document.body.classList.add("modal-open");
+
+}
+
+
+/* =========================================================
+   CLOSE CERTIFICATE
+   ========================================================= */
+
+function closeCertificateModal() {
+
+    if (!certificateModal) {
+        return;
+    }
+
+    certificateModal.classList.remove("active");
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+if (certificateClose) {
+
+    certificateClose.addEventListener(
+        "click",
+        closeCertificateModal
+    );
+
+}
+
+
+if (certificateModal) {
+
+    certificateModal.addEventListener(
+        "click",
+        event => {
+
+            if (event.target === certificateModal) {
+                closeCertificateModal();
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CERTIFICATE BUTTONS
+   ========================================================= */
+
+const certificateButtons =
+    document.querySelectorAll(
+        ".certificate-button, .view-certificate"
+    );
+
+certificateButtons.forEach(button => {
+
+    button.addEventListener("click", event => {
+
+        event.preventDefault();
+
+        openCertificateModal();
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL EFFECT
+   ========================================================= */
+
+const revealElements = document.querySelectorAll(
+    ".section, .skill-box, .project-card, " +
+    ".achievement-box, .academic-card, " +
+    ".goal-box, .creative-box, .resume-box, " +
+    ".contact-form, .contact-link"
+);
+
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach(element => {
+
+    element.classList.add("reveal");
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+const contactForm =
+    document.querySelector(".contact-form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", event => {
+
+        const submitButton =
+            contactForm.querySelector(
+                'button[type="submit"]'
+            );
+
+        if (submitButton) {
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "Sending...";
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   IMAGE ERROR HANDLING
+   ========================================================= */
+
+document.querySelectorAll("img").forEach(image => {
+
+    image.addEventListener("error", () => {
+
+        image.classList.add("image-error");
+
+    });
+
+});
+
+
+/* =========================================================
+   PAGE LOAD
+   ========================================================= */
+
+window.addEventListener("load", () => {
+
+    document.body.classList.add("page-loaded");
+
+});
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+const backToTop =
+    document.querySelector(".back-to-top");
+
+if (backToTop) {
+
+    backToTop.addEventListener("click", event => {
+
+        event.preventDefault();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+
+/* =========================================================
+   PREVENT MODAL SCROLL
+   ========================================================= */
+
+window.addEventListener("wheel", event => {
+
+    if (
+        document.body.classList.contains(
+            "modal-open"
+        )
+    ) {
+
+        const activeModal =
+            document.querySelector(
+                ".project-modal.active, .certificate-modal.active"
+            );
+
+        if (
+            activeModal &&
+            !activeModal.contains(event.target)
+        ) {
+            event.preventDefault();
+        }
+
+    }
+
+}, { passive: false });
+
+
+/* =========================================================
+   CONSOLE MESSAGE
+   ========================================================= */
+
+console.log(
+    "Nithiya Portfolio loaded successfully."
+);
