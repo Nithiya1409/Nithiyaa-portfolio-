@@ -1,671 +1,159 @@
 /* =========================================================
-   NITHIYA PORTFOLIO - MAIN JAVASCRIPT
-   ========================================================= */
+   PORTFOLIO JAVASCRIPT
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       SIDE MENU
-       ===================================================== */
+/* =========================================================
+   THREE-DOT MENU
+========================================================= */
 
-    const menuButton = document.querySelector(".menu-button");
-    const sideMenu = document.querySelector(".side-menu");
-    const menuOverlay = document.querySelector(".menu-overlay");
-    const menuLinks = document.querySelectorAll(".side-menu a");
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
 
-    function openMenu() {
-        if (sideMenu) sideMenu.classList.add("active");
-        if (menuOverlay) menuOverlay.classList.add("active");
-        document.body.classList.add("menu-open");
-    }
 
-    function closeMenu() {
-        if (sideMenu) sideMenu.classList.remove("active");
-        if (menuOverlay) menuOverlay.classList.remove("active");
-        document.body.classList.remove("menu-open");
-    }
+if (menuBtn && navMenu) {
 
-    if (menuButton) {
-        menuButton.addEventListener("click", () => {
-            if (sideMenu && sideMenu.classList.contains("active")) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
-    }
+    menuBtn.addEventListener("click", function (event) {
 
-    if (menuOverlay) {
-        menuOverlay.addEventListener("click", closeMenu);
-    }
+        event.stopPropagation();
 
-    menuLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            closeMenu();
-        });
+        navMenu.classList.toggle("active");
+
     });
 
+}
 
-    /* =====================================================
-       ESC KEY - CLOSE MENU / MODALS
-       ===================================================== */
 
-    document.addEventListener("keydown", (event) => {
+/* =========================================================
+   CLOSE MENU WHEN NAVIGATION LINK IS CLICKED
+========================================================= */
 
-        if (event.key === "Escape") {
-            closeMenu();
-            closeProjectModal();
-            closeCertificateModal();
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+
+navLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        if (navMenu) {
+
+            navMenu.classList.remove("active");
+
         }
 
     });
-
-
-    /* =====================================================
-       SMOOTH SCROLLING
-       ===================================================== */
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-        link.addEventListener("click", function (event) {
-
-            const targetId = this.getAttribute("href");
-
-            if (!targetId || targetId === "#") {
-                return;
-            }
-
-            const target = document.querySelector(targetId);
-
-            if (target) {
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-
-        });
-
-    });
-
-
-    /* =====================================================
-       PROFILE IMAGE CLICK EFFECT
-       ===================================================== */
-
-    const profileImage = document.querySelector(".profile-image");
-
-    if (profileImage) {
-
-        profileImage.addEventListener("click", () => {
-
-            profileImage.classList.toggle("active");
-
-        });
-
-    }
-
-
-    /* =====================================================
-       CURRENT SECTION HIGHLIGHT
-       ===================================================== */
-
-    const sections = document.querySelectorAll("section[id]");
-    const navigationLinks = document.querySelectorAll(
-        '.side-menu a[href^="#"]'
-    );
-
-    function updateActiveNavigation() {
-
-        let currentSection = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 200;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-                currentSection = section.getAttribute("id");
-            }
-
-        });
-
-        navigationLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (
-                currentSection &&
-                link.getAttribute("href") === `#${currentSection}`
-            ) {
-                link.classList.add("active");
-            }
-
-        });
-
-    }
-
-    window.addEventListener("scroll", updateActiveNavigation);
-
-    updateActiveNavigation();
 
 });
-/* =========================================================
-   PROJECT DATA
-   ========================================================= */
-
-const projects = [
-
-    {
-        title: "Solar Powered Wireless Charging Road for EV",
-
-        description:
-            "A smart road concept that uses solar energy and wireless charging technology to support electric vehicle charging while travelling.",
-
-        technologies: [
-            "Solar Energy",
-            "Wireless Charging",
-            "Electric Vehicles"
-        ],
-
-        document:
-            "assets/documents/solar-project.pptx"
-    },
-
-    {
-        title:
-            "Camera-Free Intelligent Human Activity Detection Using Ultrasonic Sensing",
-
-        description:
-            "An intelligent activity detection system using ultrasonic sensing without depending on cameras.",
-
-        technologies: [
-            "Arduino",
-            "Ultrasonic Sensor",
-            "Internet of Things",
-            "Machine Learning"
-        ],
-
-        document:
-            "assets/documents/human-activity-detection.pptx"
-    },
-
-    {
-        title: "Hangman",
-
-        description:
-            "A browser-based Hangman game developed using front-end web technologies.",
-
-        technologies: [
-            "HTML",
-            "CSS",
-            "JavaScript"
-        ],
-
-        document:
-            "assets/documents/hangman.pdf"
-    },
-
-    {
-        title: "Tic-Tac-Toe",
-
-        description:
-            "An interactive Tic-Tac-Toe game developed using HTML, CSS and JavaScript.",
-
-        technologies: [
-            "HTML",
-            "CSS",
-            "JavaScript"
-        ],
-
-        document:
-            "assets/documents/tictactoe.pdf",
-
-        website:
-            "https://nithiya1409.github.io/Tic-tac-toe-/"
-    },
-
-    {
-        title: "CGPA Calculator",
-
-        description:
-            "An academic utility designed to calculate CGPA using subject and grade information.",
-
-        technologies: [
-            "Programming",
-            "Calculation Logic",
-            "Academic Utility"
-        ],
-
-        document:
-            "assets/documents/cgpa-calculator-srs.pdf"
-    }
-
-];
 
 
 /* =========================================================
-   PROJECT MODAL ELEMENTS
-   ========================================================= */
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================================================= */
 
-const projectModal =
-    document.querySelector(".project-modal");
+document.addEventListener("click", function (event) {
 
-const projectModalTitle =
-    document.querySelector(".project-modal-title");
+    if (
+        navMenu &&
+        menuBtn &&
+        !navMenu.contains(event.target) &&
+        !menuBtn.contains(event.target)
+    ) {
 
-const projectModalDescription =
-    document.querySelector(".project-modal-description");
+        navMenu.classList.remove("active");
 
-const projectModalTechnologies =
-    document.querySelector(".project-modal-technologies");
+    }
 
-const projectModalDocument =
-    document.querySelector(".project-modal-document");
-
-const projectModalWebsite =
-    document.querySelector(".project-modal-website");
-
-const projectModalClose =
-    document.querySelector(".project-modal-close");
+});
 
 
 /* =========================================================
-   OPEN PROJECT MODAL
-   ========================================================= */
+   SMOOTH SCROLLING
+========================================================= */
 
-function openProjectModal(index) {
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
-    const project = projects[index];
+    link.addEventListener("click", function (event) {
 
-    if (!project || !projectModal) {
-        return;
-    }
+        const targetId = this.getAttribute("href");
 
-    if (projectModalTitle) {
-        projectModalTitle.textContent = project.title;
-    }
+        if (!targetId || targetId === "#") {
 
-    if (projectModalDescription) {
-        projectModalDescription.textContent =
-            project.description;
-    }
-
-
-    /* Technologies */
-
-    if (projectModalTechnologies) {
-
-        projectModalTechnologies.innerHTML = "";
-
-        project.technologies.forEach(technology => {
-
-            const technologyElement =
-                document.createElement("span");
-
-            technologyElement.textContent =
-                technology;
-
-            projectModalTechnologies.appendChild(
-                technologyElement
-            );
-
-        });
-
-    }
-
-
-    /* Document */
-
-    if (projectModalDocument) {
-
-        if (project.document) {
-
-            projectModalDocument.href =
-                project.document;
-
-            projectModalDocument.style.display =
-                "inline-flex";
-
-        } else {
-
-            projectModalDocument.style.display =
-                "none";
+            return;
 
         }
 
-    }
+
+        const targetElement =
+            document.querySelector(targetId);
 
 
-    /* Website */
-
-    if (projectModalWebsite) {
-
-        if (project.website) {
-
-            projectModalWebsite.href =
-                project.website;
-
-            projectModalWebsite.target =
-                "_blank";
-
-            projectModalWebsite.rel =
-                "noopener noreferrer";
-
-            projectModalWebsite.style.display =
-                "inline-flex";
-
-        } else {
-
-            projectModalWebsite.style.display =
-                "none";
-
-        }
-
-    }
-
-
-    projectModal.classList.add("active");
-
-    document.body.classList.add("modal-open");
-
-}
-
-
-/* =========================================================
-   CLOSE PROJECT MODAL
-   ========================================================= */
-
-function closeProjectModal() {
-
-    if (!projectModal) {
-        return;
-    }
-
-    projectModal.classList.remove("active");
-
-    document.body.classList.remove("modal-open");
-
-}
-
-
-if (projectModalClose) {
-
-    projectModalClose.addEventListener(
-        "click",
-        closeProjectModal
-    );
-
-}
-
-
-/* Close when clicking outside modal */
-
-if (projectModal) {
-
-    projectModal.addEventListener("click", event => {
-
-        if (event.target === projectModal) {
-            closeProjectModal();
-        }
-
-    });
-
-}
-
-
-/* =========================================================
-   PROJECT BUTTONS / CARDS
-   ========================================================= */
-
-const projectCards =
-    document.querySelectorAll(".project-card");
-
-projectCards.forEach((card, index) => {
-
-    card.addEventListener("click", () => {
-
-        openProjectModal(index);
-
-    });
-
-    card.addEventListener("keydown", event => {
-
-        if (
-            event.key === "Enter" ||
-            event.key === " "
-        ) {
+        if (targetElement) {
 
             event.preventDefault();
 
-            openProjectModal(index);
 
-        }
-
-    });
-
-});
-/* =========================================================
-   CERTIFICATE MODAL
-   ========================================================= */
-
-const certificateModal =
-    document.querySelector(".certificate-modal");
-
-const certificateImage =
-    document.querySelector(".certificate-modal img");
-
-const certificateClose =
-    document.querySelector(".certificate-modal-close");
+            const header =
+                document.querySelector(".header");
 
 
-/* =========================================================
-   OPEN CERTIFICATE
-   ========================================================= */
-
-function openCertificateModal() {
-
-    if (!certificateModal) {
-        return;
-    }
-
-    certificateModal.classList.add("active");
-
-    document.body.classList.add("modal-open");
-
-}
+            const headerHeight =
+                header ? header.offsetHeight : 0;
 
 
-/* =========================================================
-   CLOSE CERTIFICATE
-   ========================================================= */
-
-function closeCertificateModal() {
-
-    if (!certificateModal) {
-        return;
-    }
-
-    certificateModal.classList.remove("active");
-
-    document.body.classList.remove("modal-open");
-
-}
+            const targetPosition =
+                targetElement.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight;
 
 
-if (certificateClose) {
+            window.scrollTo({
 
-    certificateClose.addEventListener(
-        "click",
-        closeCertificateModal
-    );
+                top: targetPosition,
 
-}
-
-
-if (certificateModal) {
-
-    certificateModal.addEventListener(
-        "click",
-        event => {
-
-            if (event.target === certificateModal) {
-                closeCertificateModal();
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   CERTIFICATE BUTTONS
-   ========================================================= */
-
-const certificateButtons =
-    document.querySelectorAll(
-        ".certificate-button, .view-certificate"
-    );
-
-certificateButtons.forEach(button => {
-
-    button.addEventListener("click", event => {
-
-        event.preventDefault();
-
-        openCertificateModal();
-
-    });
-
-});
-
-
-/* =========================================================
-   SCROLL REVEAL EFFECT
-   ========================================================= */
-
-const revealElements = document.querySelectorAll(
-    ".section, .skill-box, .project-card, " +
-    ".achievement-box, .academic-card, " +
-    ".goal-box, .creative-box, .resume-box, " +
-    ".contact-form, .contact-link"
-);
-
-
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                    revealObserver.unobserve(
-                        entry.target
-                    );
-
-                }
+                behavior: "smooth"
 
             });
 
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-revealElements.forEach(element => {
-
-    element.classList.add("reveal");
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================================
-   CONTACT FORM
-   ========================================================= */
-
-const contactForm =
-    document.querySelector(".contact-form");
-
-if (contactForm) {
-
-    contactForm.addEventListener("submit", event => {
-
-        const submitButton =
-            contactForm.querySelector(
-                'button[type="submit"]'
-            );
-
-        if (submitButton) {
-
-            submitButton.disabled = true;
-
-            submitButton.textContent =
-                "Sending...";
-
         }
 
     });
 
-}
-
-
-/* =========================================================
-   IMAGE ERROR HANDLING
-   ========================================================= */
-
-document.querySelectorAll("img").forEach(image => {
-
-    image.addEventListener("error", () => {
-
-        image.classList.add("image-error");
-
-    });
-
 });
 
 
 /* =========================================================
-   PAGE LOAD
-   ========================================================= */
-
-window.addEventListener("load", () => {
-
-    document.body.classList.add("page-loaded");
-
-});
-
-
-/* =========================================================
-   BACK TO TOP
-   ========================================================= */
+   BACK TO TOP BUTTON
+========================================================= */
 
 const backToTop =
-    document.querySelector(".back-to-top");
+    document.getElementById("backToTop");
+
 
 if (backToTop) {
 
-    backToTop.addEventListener("click", event => {
+    window.addEventListener("scroll", function () {
 
-        event.preventDefault();
+        if (window.scrollY > 500) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
+
+    });
+
+
+    backToTop.addEventListener("click", function () {
 
         window.scrollTo({
+
             top: 0,
+
             behavior: "smooth"
+
         });
 
     });
@@ -674,38 +162,103 @@ if (backToTop) {
 
 
 /* =========================================================
-   PREVENT MODAL SCROLL
-   ========================================================= */
+   ACTIVE NAVIGATION LINK
+========================================================= */
 
-window.addEventListener("wheel", event => {
+const sections =
+    document.querySelectorAll("section[id]");
 
-    if (
-        document.body.classList.contains(
-            "modal-open"
-        )
-    ) {
 
-        const activeModal =
-            document.querySelector(
-                ".project-modal.active, .certificate-modal.active"
-            );
+window.addEventListener("scroll", function () {
+
+    let currentSection = "";
+
+
+    sections.forEach(function (section) {
+
+        const sectionTop =
+            section.offsetTop - 150;
+
+
+        const sectionHeight =
+            section.offsetHeight;
+
 
         if (
-            activeModal &&
-            !activeModal.contains(event.target)
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
         ) {
-            event.preventDefault();
+
+            currentSection =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navLinks.forEach(function (link) {
+
+        link.classList.remove("active");
+
+
+        const linkTarget =
+            link.getAttribute("href");
+
+
+        if (
+            linkTarget === "#" + currentSection
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   ESCAPE KEY CLOSES MENU
+========================================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        if (navMenu) {
+
+            navMenu.classList.remove("active");
+
         }
 
     }
 
-}, { passive: false });
+});
 
 
 /* =========================================================
-   CONSOLE MESSAGE
-   ========================================================= */
+   PREVENT BROKEN EMPTY PROJECT LINKS
+========================================================= */
 
-console.log(
-    "Nithiya Portfolio loaded successfully."
-);
+document.querySelectorAll('.project-btn[href="#"]').forEach(function (button) {
+
+    button.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+    });
+
+});
+
+
+/* =========================================================
+   PAGE LOADED
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.body.classList.add("loaded");
+
+});
