@@ -1,36 +1,68 @@
-/* =========================================================
-   NITHIYA SREE R - PORTFOLIO
-   JAVASCRIPT
-   ========================================================= */
-
-
-/* =========================================================
-   WAIT FOR PAGE TO LOAD
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
-       ELEMENTS
-       ==================================================== */
+       1. THREE-DOT MENU
+    ===================================================== */
 
     const menuButton = document.getElementById("menuButton");
     const sideMenu = document.getElementById("sideMenu");
     const closeMenu = document.getElementById("closeMenu");
     const menuOverlay = document.getElementById("menuOverlay");
 
-    const projectModal = document.getElementById("projectModal");
-    const certificateModal = document.getElementById("certificateModal");
+    function openMenu() {
+        if (!sideMenu || !menuOverlay) return;
 
-    const projectModalContent =
-        document.getElementById("projectModalContent");
+        sideMenu.classList.add("active");
+        menuOverlay.classList.add("active");
 
-    const year = document.getElementById("year");
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "true");
+        }
+
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeNavigationMenu() {
+        if (!sideMenu || !menuOverlay) return;
+
+        sideMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        document.body.style.overflow = "";
+    }
+
+    if (menuButton) {
+        menuButton.addEventListener("click", openMenu);
+    }
+
+    if (closeMenu) {
+        closeMenu.addEventListener("click", closeNavigationMenu);
+    }
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener("click", closeNavigationMenu);
+    }
 
 
     /* =====================================================
-       PROJECT DATA
-       ===================================================== */
+       2. CLOSE MENU WHEN NAVIGATION LINK IS CLICKED
+    ===================================================== */
+
+    const navigationLinks =
+        document.querySelectorAll(".side-menu nav a");
+
+    navigationLinks.forEach(function (link) {
+        link.addEventListener("click", closeNavigationMenu);
+    });
+
+
+    /* =====================================================
+       3. PROJECT DATA
+    ===================================================== */
 
     const projects = [
 
@@ -50,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "assets/documents/solar-project.pptx"
         },
 
-
         {
             title:
                 "Camera-Free Intelligent Human Activity Detection Using Ultrasonic Sensing",
@@ -68,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "assets/documents/human-activity-detection.pptx"
         },
 
-
         {
             title: "Hangman",
 
@@ -84,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document:
                 "assets/documents/hangman.pdf"
         },
-
 
         {
             title: "Tic-Tac-Toe",
@@ -105,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "https://nithiya1409.github.io/Tic-tac-toe-/"
         },
 
-
         {
             title: "CGPA Calculator",
 
@@ -121,102 +149,21 @@ document.addEventListener("DOMContentLoaded", function () {
             srs:
                 "assets/documents/cgpa-calculator-srs.pdf"
         }
-
     ];
 
 
     /* =====================================================
-       MENU FUNCTIONS
-       ===================================================== */
+       4. DISPLAY PROJECTS
+    ===================================================== */
 
-    function openMenu() {
-
-        if (!sideMenu || !menuOverlay) return;
-
-        sideMenu.classList.add("active");
-        menuOverlay.classList.add("active");
-
-        if (menuButton) {
-            menuButton.setAttribute("aria-expanded", "true");
-        }
-
-        document.body.style.overflow = "hidden";
-    }
-
-
-    function closeNavigationMenu() {
-
-        if (!sideMenu || !menuOverlay) return;
-
-        sideMenu.classList.remove("active");
-        menuOverlay.classList.remove("active");
-
-        if (menuButton) {
-            menuButton.setAttribute("aria-expanded", "false");
-        }
-
-        document.body.style.overflow = "";
-    }
-
-
-    /* Open menu */
-
-    if (menuButton) {
-        menuButton.addEventListener("click", openMenu);
-    }
-
-
-    /* Close menu */
-
-    if (closeMenu) {
-        closeMenu.addEventListener(
-            "click",
-            closeNavigationMenu
-        );
-    }
-
-
-    /* Close when overlay is clicked */
-
-    if (menuOverlay) {
-        menuOverlay.addEventListener(
-            "click",
-            closeNavigationMenu
-        );
-    }
-
-
-    /* =====================================================
-       CLOSE MENU WHEN NAVIGATION LINK IS CLICKED
-       ===================================================== */
-
-    const navigationLinks =
-        document.querySelectorAll(".side-menu a");
-
-    navigationLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            closeNavigationMenu();
-
-        });
-
-    });
-
-
-    /* =====================================================
-       DISPLAY PROJECTS
-       ===================================================== */
+    const projectsGrid =
+        document.getElementById("projectsGrid");
 
     function displayProjects() {
-
-        const projectsGrid =
-            document.getElementById("projectsGrid");
 
         if (!projectsGrid) return;
 
         projectsGrid.innerHTML = "";
-
 
         projects.forEach(function (project, index) {
 
@@ -225,25 +172,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             card.className = "project-card";
 
-
             card.innerHTML = `
-
                 <div>
 
                     <div class="project-number">
                         PROJECT ${String(index + 1).padStart(2, "0")}
                     </div>
 
-                    <h3>
-                        ${project.title}
-                    </h3>
+                    <h3>${project.title}</h3>
 
-                    <p>
-                        ${project.description}
-                    </p>
+                    <p>${project.description}</p>
 
                 </div>
-
 
                 <button
                     type="button"
@@ -253,29 +193,37 @@ document.addEventListener("DOMContentLoaded", function () {
                     View Project →
 
                 </button>
-
             `;
 
-
             projectsGrid.appendChild(card);
-
         });
-
     }
 
 
     /* =====================================================
-       OPEN PROJECT
-       ===================================================== */
+       5. PROJECT MODAL
+    ===================================================== */
+
+    const projectModal =
+        document.getElementById("projectModal");
+
+    const projectModalContent =
+        document.getElementById("projectModalContent");
+
+
+    /* =====================================================
+       6. OPEN PROJECT
+    ===================================================== */
 
     window.openProject = function (index) {
 
         const project = projects[index];
 
-        if (!project || !projectModal || !projectModalContent) {
+        if (!project ||
+            !projectModal ||
+            !projectModalContent) {
             return;
         }
-
 
         let actionButtons = "";
 
@@ -285,40 +233,38 @@ document.addEventListener("DOMContentLoaded", function () {
         if (project.ppt) {
 
             actionButtons += `
-
                 <a
                     href="${project.ppt}"
                     target="_blank"
                     rel="noopener"
                     class="btn primary-btn">
 
-                    📊 View Project PPT →
+                    <i class="fa-solid fa-file-powerpoint"></i>
+
+                    View Project PPT →
 
                 </a>
-
             `;
-
         }
 
 
-        /* ---------- PDF DOCUMENT ---------- */
+        /* ---------- PDF ---------- */
 
         if (project.document) {
 
             actionButtons += `
-
                 <a
                     href="${project.document}"
                     target="_blank"
                     rel="noopener"
                     class="btn primary-btn">
 
-                    📄 View Document →
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    View Document →
 
                 </a>
-
             `;
-
         }
 
 
@@ -327,19 +273,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (project.srs) {
 
             actionButtons += `
-
                 <a
                     href="${project.srs}"
                     target="_blank"
                     rel="noopener"
                     class="btn primary-btn">
 
-                    📑 View SRS →
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    View SRS →
 
                 </a>
-
             `;
-
         }
 
 
@@ -348,46 +293,36 @@ document.addEventListener("DOMContentLoaded", function () {
         if (project.website) {
 
             actionButtons += `
-
                 <a
                     href="${project.website}"
                     target="_blank"
                     rel="noopener"
                     class="btn secondary-btn">
 
-                    🌐 Visit Website →
+                    <i class="fa-solid fa-globe"></i>
+
+                    Visit Website →
 
                 </a>
-
             `;
-
         }
 
 
-        /* =================================================
-           MODAL CONTENT
-           ================================================= */
+        /* ---------- MODAL CONTENT ---------- */
 
         projectModalContent.innerHTML = `
 
-            <h2>
-                ${project.title}
-            </h2>
-
+            <h2>${project.title}</h2>
 
             <p>
                 ${project.description}
             </p>
 
-
             <div class="project-details">
-
 
                 <div class="detail-box">
 
-                    <h4>
-                        TECHNOLOGIES
-                    </h4>
+                    <h4>TECHNOLOGIES</h4>
 
                     <p>
                         ${project.technologies}
@@ -395,12 +330,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 </div>
 
-
                 <div class="detail-box">
 
-                    <h4>
-                        PROJECT TYPE
-                    </h4>
+                    <h4>PROJECT TYPE</h4>
 
                     <p>
                         ${project.type}
@@ -408,18 +340,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 </div>
 
-
             </div>
-
 
             <div class="modal-actions">
-
                 ${actionButtons}
-
             </div>
-
         `;
 
+
+        /* ---------- SHOW POPUP ---------- */
 
         projectModal.classList.add("active");
 
@@ -429,13 +358,12 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         document.body.style.overflow = "hidden";
-
     };
 
 
     /* =====================================================
-       CLOSE PROJECT
-       ===================================================== */
+       7. CLOSE PROJECT
+    ===================================================== */
 
     window.closeProject = function () {
 
@@ -448,14 +376,23 @@ document.addEventListener("DOMContentLoaded", function () {
             "true"
         );
 
-        document.body.style.overflow = "";
+        /*
+           IMPORTANT:
+           Only the popup closes.
+           The user stays on the portfolio page.
+        */
 
+        document.body.style.overflow = "";
     };
 
 
     /* =====================================================
-       CERTIFICATE
-       ===================================================== */
+       8. CERTIFICATE MODAL
+    ===================================================== */
+
+    const certificateModal =
+        document.getElementById("certificateModal");
+
 
     window.openCertificate = function () {
 
@@ -469,13 +406,8 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         document.body.style.overflow = "hidden";
-
     };
 
-
-    /* =====================================================
-       CLOSE CERTIFICATE
-       ===================================================== */
 
     window.closeCertificate = function () {
 
@@ -489,13 +421,12 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         document.body.style.overflow = "";
-
     };
 
 
     /* =====================================================
-       CLICK OUTSIDE PROJECT MODAL
-       ===================================================== */
+       9. CLOSE PROJECT BY CLICKING OUTSIDE
+    ===================================================== */
 
     if (projectModal) {
 
@@ -506,18 +437,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (event.target === projectModal) {
 
                     window.closeProject();
-
                 }
-
             }
         );
-
     }
 
 
     /* =====================================================
-       CLICK OUTSIDE CERTIFICATE MODAL
-       ===================================================== */
+       10. CLOSE CERTIFICATE BY CLICKING OUTSIDE
+    ===================================================== */
 
     if (certificateModal) {
 
@@ -528,18 +456,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (event.target === certificateModal) {
 
                     window.closeCertificate();
-
                 }
-
             }
         );
-
     }
 
 
     /* =====================================================
-       ESCAPE KEY
-       ===================================================== */
+       11. ESC KEY
+    ===================================================== */
 
     document.addEventListener(
         "keydown",
@@ -552,28 +477,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.closeProject();
 
                 window.closeCertificate();
-
             }
-
         }
     );
 
 
     /* =====================================================
-       CURRENT YEAR
-       ===================================================== */
+       12. CURRENT YEAR
+    ===================================================== */
+
+    const year =
+        document.getElementById("year");
 
     if (year) {
 
         year.textContent =
             new Date().getFullYear();
-
     }
 
 
     /* =====================================================
-       INITIALIZE PROJECTS
-       ===================================================== */
+       13. START PROJECT DISPLAY
+    ===================================================== */
 
     displayProjects();
 
